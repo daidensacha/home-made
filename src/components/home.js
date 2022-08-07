@@ -18,7 +18,7 @@ const Home = ({ articles }) => {
             if (index < 5 ) {
             return (
               <li key={id} className={styles.listItem}>
-                <Link className={styles.articleLink} to={`/articles/${slug}`}>
+                <Link className={styles.articleLink} to={`/article/${slug}`}>
                   {title}
                 </Link>
               </li>

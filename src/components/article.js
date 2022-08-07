@@ -6,11 +6,13 @@ import styles from '../styles/article.module.scss';
 
 const Article = ({ articles }) => {
   const { slug } = useParams();
-  // console.log(slug);
+  console.log(slug);
   // console.log(articles);
   // const article = articles[slug]
   // console.log("ARTICLE", article);
   const article = articles.find(article => article.slug === slug);
+console.log(article)
+
 
   function convertDate(dateStr) {
     const date = new Date(dateStr);

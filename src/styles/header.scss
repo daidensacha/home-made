@@ -25,6 +25,48 @@
       margin-right: 1rem;
     }
   }
+  .search {
+    // width: 100px;
+    height: 30px;
+    display: flex;
+    margin-right: 1rem;
+    input {
+      height: 30px;
+      width: 250px;
+      color: $light;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border: 1px solid $grayDarker;
+      border-right: none;
+      background-color: rgba($dark, 0.5);
+      padding-left: .5rem;
+      &:focus-visible {
+        // border-color: $primary;
+        outline: none;
+      }
+      &::placeholder {
+        color: darken($light, 20%);
+      }
+    }
+
+    button {
+      color: $grayLight;
+      width: 30px;
+      height: 30px;
+      background-color: $dark;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border: 1px solid $grayDarker;
+      border-left: none;
+      // border-radius: 5px;
+      transition: all 0.5s ease-out;
+      &:hover {
+        background-color: $grayDarker;
+        color: $light;
+        cursor: pointer;
+      }
+    }
+  }
   .navlink {
     color: $grayDark;
     font-size: $medium;
