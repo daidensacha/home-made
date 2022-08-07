@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+.articleIntro {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: flex-start;
+  padding: .5rem;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  .heading {
+    color: $dark;
+    margin-bottom: .5rem;
+
+  }
+  .description {
+    color: $dark;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    text-align: justify;
+  }
+  .btn {
+    color: $blueDark;
+    background-color: transparent;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    border: none;
+    &:hover {
+      color: lighten($blueDark, 20%);
+      cursor: pointer;
+      // text-decoration: underline;
+    }
+  }
+
+}

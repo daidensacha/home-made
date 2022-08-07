@@ -1,0 +1,45 @@
+@import './variables.scss';
+
+.header {
+  height: 60px;
+  background-color: rgba($blueLight, 0.9);
+  color: $dark;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      font-family: $fontHandwriting;
+      font-size: 3rem;
+      font-weight: 700;
+      color: darken($info, 15%);
+    }
+    .logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 1rem;
+    }
+  }
+  .navlink {
+    color: $grayDark;
+    font-size: $medium;
+    font-weight: 400;
+    padding: 0 10px;
+    text-decoration: $none;
+    transition: all 0.5s ease-out;
+    &:hover {
+      color: darken($primary, 10%);
+    }
+    .active {
+      color: darken($primary, 20%);
+    }
+  }
+  .active {
+    color: $blueDark;
+  }
+}

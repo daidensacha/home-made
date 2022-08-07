@@ -1,23 +1,117 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import Header from './components/header';
+import Home from './components/home';
+import Articles from './components/articles';
+import Article from './components/article';
+import Contact from './components/contact';
+import Footer from './components/footer';
+import TagArticles from './components/tagArticles';
+
+import { client } from './components/client.js';
+import { useEffect, useState, useCallback } from 'react';
+
+// Import style sheets
+import 'normalize.css';
+import './App.scss';
 
 function App() {
+  const location = useLocation();
+
+  const [articles, setArticles] = useState([]);
+  const [blogData, setBlogData] = useState([]);
+
+  const cleanData = useCallback(rawData => {
+    const cleanedData = rawData.map(article => {
+      const { sys, fields, metadata } = article;
+      const { title, description, slug, author } = fields;
+      const { id, createdAt } = sys;
+      const imageUrl = fields.image.fields.file.url;
+      const imageTitle = fields.image.fields.title;
+      const post = fields.body.content[0].content[0].value;
+      const tags = metadata.tags.map(item => item.sys.id);
+      const updatedData = {
+        title,
+        description,
+        slug,
+        id,
+        createdAt,
+        imageUrl,
+        imageTitle,
+        post,
+        tags,
+        author,
+      };
+      return updatedData;
+    });
+    setArticles(cleanedData);
+  }, []);
+
+  // cleanData();
+  console.log('articles', articles);
+
+  useEffect(() => {
+    client.getEntries().then(function (entries) {
+      // log all items that have a title
+      const blogArticles = entries.items.filter(entry => entry.fields.title);
+      console.log('blogArticles', blogArticles);
+      // setBlogData(blogArticles);
+      cleanData(blogArticles);
+      // cleanData(blogData);
+    });
+  }, []);
+  // console.log('articles', articles);
+  // console.log(articles);
+
+  // const articleData = articles.map(article => {
+  //   const { sys, fields, metadata } = article;
+  //   const { title, description, slug } = fields;
+  //   const { id, createdAt } = sys;
+  //   const imageUrl = fields.image.fields.file.url;
+  //   const imageTitle = fields.image.fields.title;
+  //   const post = fields.body.content[0].content[0].value;
+  //   const tags = metadata.tags.map(item => item.sys.id);
+  //   return {
+  //     title,
+  //     description,
+  //     slug,
+  //     id,
+  //     createdAt,
+  //     imageUrl,
+  //     imageTitle,
+  //     post,
+  //     tags,
+  //   };
+  // }, []);
+  // console.log(articleData);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Header />
+      <div className='main'>
+        <AnimatePresence exitBeforeEnter>
+          <Routes key={location.pathname} location={location}>
+            <Route path='/' element={<Home articles={articles} />} />
+
+            <Route
+              path='/articles/:slug'
+              element={<Article articles={articles} />}
+            />
+
+            <Route
+              path='/tagArticles/:tag'
+              element={<TagArticles articles={articles} />}
+            />
+
+            <Route
+              path='/articles'
+              element={<Articles articles={articles} />}
+            />
+            <Route path='/contact' element={<Contact articles={articles} />} />
+          </Routes>
+        </AnimatePresence>
+      </div>
+      <Footer />
     </div>
   );
 }
