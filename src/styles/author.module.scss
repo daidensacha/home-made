@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+.author {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.25rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px #3a474e26, 0 1px 2px #3a474e26;
+  background-color: rgba($body, 0.8);
+  border-radius: 5px;
+  width: 100%;
+  .h3 {
+    color: darken($cream1, 0%);
+    background-color: rgba($cream4, 1);
+    border-radius: 5px;
+    padding: 0.3rem 0.25rem 0.3rem 0.25rem;
+    font-size: $large;
+    font-weight: 700;
+    // padding: 0 10px;
+    margin: 0 0 0.5rem 0;
+    width: 100%;
+  }
+  p {
+    text-align: justify;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}

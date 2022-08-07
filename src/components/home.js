@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AnimatedPage from '../components/animatedPage';
+import AnimatedPage from './AnimatedPage';
 import { Link } from 'react-router-dom';
 
 import styles from  '../styles/home.module.scss';

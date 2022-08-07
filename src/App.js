@@ -1,14 +1,15 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import Header from './components/header';
-import Home from './components/home';
-import Articles from './components/articles';
-import Article from './components/article';
-import Contact from './components/contact';
-import Footer from './components/footer';
-import TagArticles from './components/tagArticles';
+import Header from './components/Header';
+import Home from './components/Home';
+import Articles from './components/Articles';
+import Article from './components/Article';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import TagArticles from './components/TagArticles';
+import Error from './components/Error';
 
-import { client } from './components/client.js';
+import { client } from './components/Client.js';
 import { useEffect, useState, useCallback } from 'react';
 
 // Import style sheets
@@ -19,7 +20,7 @@ function App() {
   const location = useLocation();
 
   const [articles, setArticles] = useState([]);
-  const [blogData, setBlogData] = useState([]);
+  // const [blogData, setBlogData] = useState([]);
 
   const cleanData = useCallback(rawData => {
     const cleanedData = rawData.map(article => {
@@ -55,35 +56,12 @@ function App() {
       // log all items that have a title
       const blogArticles = entries.items.filter(entry => entry.fields.title);
       console.log('blogArticles', blogArticles);
-      // setBlogData(blogArticles);
+      // Use cleanDate function to save select fields from the raw data to state
       cleanData(blogArticles);
-      // cleanData(blogData);
     });
   }, []);
   // console.log('articles', articles);
   // console.log(articles);
-
-  // const articleData = articles.map(article => {
-  //   const { sys, fields, metadata } = article;
-  //   const { title, description, slug } = fields;
-  //   const { id, createdAt } = sys;
-  //   const imageUrl = fields.image.fields.file.url;
-  //   const imageTitle = fields.image.fields.title;
-  //   const post = fields.body.content[0].content[0].value;
-  //   const tags = metadata.tags.map(item => item.sys.id);
-  //   return {
-  //     title,
-  //     description,
-  //     slug,
-  //     id,
-  //     createdAt,
-  //     imageUrl,
-  //     imageTitle,
-  //     post,
-  //     tags,
-  //   };
-  // }, []);
-  // console.log(articleData);
 
   return (
     <div className='App'>
@@ -108,6 +86,8 @@ function App() {
               element={<Articles articles={articles} />}
             />
             <Route path='/contact' element={<Contact articles={articles} />} />
+
+            <Route path='*' element={<Error />} />
           </Routes>
         </AnimatePresence>
       </div>

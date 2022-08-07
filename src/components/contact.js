@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/contact.module.scss';
-import AnimatedPage from '../components/animatedPage';
+import AnimatedPage from './AnimatedPage';
 import cx from 'classnames';
 
 // Import the NavLink component.

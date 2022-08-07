@@ -1,0 +1,39 @@
+@import './variables.scss';
+
+.main {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .errorSection {
+      background-color: rgba($dark, 0.6);
+      padding: 0 2rem 2rem;
+      border-radius: 10px;
+      // opacity: 0.4;
+    }
+    .h1 {
+      font-family: $fontSanSerif;
+      color: $blueLight;
+    }
+    p {
+      color: $light;
+      margin: 1rem 0;
+    }
+    .btn {
+      color: $cream1;
+      text-decoration: none;
+      background-color: lighten($blueDark, 0%);
+      margin: 1rem;
+      padding: .25rem .5rem;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      transition: all 0.5s ease-out;
+      &:hover {
+        color: lighten($blueDark, 50%);
+        background-color: lighten($blueDark, 10%);
+        cursor: pointer;
+      }
+    }
+  }

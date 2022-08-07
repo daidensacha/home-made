@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import AnimatedPage from '../components/animatedPage';
+import AnimatedPage from './AnimatedPage';
 
 import styles from '../styles/article.module.scss';
 // import ArticleIntro from './articleIntro';
@@ -8,6 +8,8 @@ const Article = ({ articles }) => {
   const { slug } = useParams();
   // console.log(slug);
   // console.log(articles);
+  // const article = articles[slug]
+  // console.log("ARTICLE", article);
   const article = articles.find(article => article.slug === slug);
 
   function convertDate(dateStr) {

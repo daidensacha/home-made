@@ -6,90 +6,32 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  // align-items: flex-start;
+  min-height: calc(100vh - 120px);
   padding: 0 4rem;
-
   .sidebar {
     width: 300px;
-    // background-color: $light;
-    // border-right: 1px solid $grayLight;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 3rem;
-    // border: 1px solid $dark;
-    .categories {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding: .5rem;;
-      margin: 1rem 0;
-      background-color: rgba($light, .8);
-      // list-style: none;
-      .h3 {
-        color: $blueDark;
-        font-size: $large;
-        font-weight: 700;
-        padding: 0 10px;
-        margin: 0 0 .5rem 0;
-      }
-      ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        li {
-          padding: .25em 10px;
-          a {
-            color: $dark;
-            font-size: $medium;
-            font-weight: 400;
-            text-decoration: $none;
-            transition: all 0.5s ease-out;
-            &:hover {
-              color: darken($primary, 10%);
-            }
-            .active {
-              color: $primary;
-            }
-          }
-        }
-      }
-    }
-
+    padding: 4rem 1rem 0;
   }
-  // .content {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-  //   // border: 1px solid $info;
-  //   width: 100%;
-  //   .h3 {
-  //     color: $blueDark;
-  //     font-size: $large;
-  //     font-weight: 700;
-  //     padding: 0 10px;
-  //     margin: 0 0 .5rem 0;
-  //   }
-  // }
   .content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    // gap: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: flex-start;
     width: 100%;
-    padding: 4rem .25rem .25rem .25rem;
+    padding: 4rem 0.25rem 0.25rem 0.25rem;
     .h3 {
       color: $blueDark;
       font-size: $large;
       font-weight: 700;
       padding: 0 10px;
-      margin: 0 0 .5rem 0;
+      margin: 0 0 0.5rem 0;
     }
   }
 }
