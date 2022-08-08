@@ -20,10 +20,10 @@ function App() {
   const location = useLocation();
 
   const [articles, setArticles] = useState([]);
-  const [blogData, setBlogData] = useState([]);
+  // const [blogData, setBlogData] = useState([]);
 
-  const cleanData = useCallback(blogData => {
-    const cleanedData = blogData.map(article => {
+  const cleanData = useCallback(rawData => {
+    const cleanedData = rawData.map(article => {
       const { sys, fields, metadata } = article;
       const { title, description, slug, author } = fields;
       const { id, createdAt } = sys;
@@ -57,7 +57,7 @@ function App() {
       const blogArticles = entries.items.filter(entry => entry.fields.title);
       console.log('blogArticles', blogArticles);
       // Use cleanDate function to save select fields from the raw data to state
-      setBlogData(blogArticles);
+      cleanData(blogArticles);
     });
   }, []);
   console.log('Post UseEffect Articles', articles);
