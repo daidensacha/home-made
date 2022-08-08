@@ -11,8 +11,7 @@ const Article = ({ articles }) => {
   // const article = articles[slug]
   // console.log("ARTICLE", article);
   const article = articles.find(article => article.slug === slug);
-console.log(article)
-
+  console.log(article);
 
   function convertDate(dateStr) {
     const date = new Date(dateStr);
