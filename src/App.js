@@ -59,7 +59,7 @@ function App() {
       // Use cleanDate function to save select fields from the raw data to state
       cleanData(blogArticles);
     });
-  }, []);
+  }, [cleanData]);
   console.log('Post UseEffect Articles', articles);
   // console.log(articles);
 

@@ -27,11 +27,11 @@
   }
   .search {
     // width: 100px;
-    height: 30px;
+    height: 35px;
     display: flex;
     margin-right: 1rem;
     input {
-      height: 30px;
+      height: 35px;
       width: 250px;
       color: $light;
       border-top-left-radius: 5px;
@@ -39,7 +39,7 @@
       border: 1px solid $grayDarker;
       border-right: none;
       background-color: rgba($dark, 0.5);
-      padding-left: .5rem;
+      padding-left: 0.5rem;
       &:focus-visible {
         // border-color: $primary;
         outline: none;
@@ -51,8 +51,8 @@
 
     button {
       color: $grayLight;
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       background-color: $dark;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
