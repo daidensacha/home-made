@@ -17,7 +17,7 @@
       font-family: $fontHandwriting;
       font-size: 3rem;
       font-weight: 700;
-      color: darken($info, 15%);
+      color: darken($info, 30%);
     }
     .logo {
       width: 30px;
@@ -61,7 +61,7 @@
       // border-radius: 5px;
       transition: all 0.5s ease-out;
       &:hover {
-        background-color: $grayDarker;
+        background-color: $blueDark;
         color: $light;
         cursor: pointer;
       }
