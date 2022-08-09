@@ -25,18 +25,18 @@ const Article = ({ articles }) => {
 
   return (
     <AnimatedPage>
-      <div className={styles.post}>
-        <div className={styles.imageContainer}>
-          <img src={article.imageUrl} alt={article.imageTitle} />
+      {article && (
+        <div className={styles.post}>
+          <div className={styles.imageContainer}>
+            <img src={article.imageUrl} alt={article.imageTitle} />
+          </div>
+          <h1>{article.title}</h1>
+          <p className={styles.date}>
+            {article.author} created at {convertDate(article.createdAt)}
+          </p>
+          <p className={styles.postBody}>{article.post}</p>
         </div>
-        {/* <div className={styles.contentContainer}> */}
-        <h1>{article.title}</h1>
-        <p className={styles.date}>
-          {article.author} created at {convertDate(article.createdAt)}
-        </p>
-        <p className={styles.postBody}>{article.post}</p>
-        {/* </div> */}
-      </div>
+      )}
     </AnimatedPage>
   );
 };

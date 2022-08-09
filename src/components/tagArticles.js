@@ -61,6 +61,7 @@ const TagArticles = ({ articles }) => {
                   slug={slug}
                   post={post}
                   createdAt={createdAt}
+                  articles={articles}
                 />
               );
             },
