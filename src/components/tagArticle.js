@@ -5,8 +5,8 @@ import AnimatedPage from './AnimatedPage';
 const TagArticle = ({ title, description, slug }) => {
   return (
     // {articles.map(article => console.log(article.fields.title))}
-    <AnimatedPage>
-      {title && description && slug ? (
+    // <AnimatedPage>
+      title && description && slug ? (
         <div className={styles.articleIntro}>
           <h3 className={styles.heading}> {title} </h3>
           <p className={styles.description}> {description} </p>
@@ -17,8 +17,8 @@ const TagArticle = ({ title, description, slug }) => {
       ) : (
         // render error page on 404
         <h1>Page not found</h1>
-      )}
-    </AnimatedPage>
+      )
+    // </AnimatedPage>
   );
 };
 
