@@ -49,7 +49,7 @@ function App() {
   }, []);
 
   // cleanData();
-  console.log('Pre useEffect Aticles', articles);
+  // console.log('Pre useEffect Aticles', articles);
 
   useEffect(() => {
     client.getEntries().then(function (entries) {
@@ -60,7 +60,7 @@ function App() {
       cleanData(blogArticles);
     });
   }, [cleanData]);
-  console.log('Post UseEffect Articles', articles);
+  // console.log('Post UseEffect Articles', articles);
   // console.log(articles);
 
   return (

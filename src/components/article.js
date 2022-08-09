@@ -7,12 +7,17 @@ import styles from '../styles/article.module.scss';
 const Article = ({ articles }) => {
   const { slug } = useParams();
   console.log(slug);
+
+  //
+
+  //
   // console.log(articles);
   // const article = articles[slug]
   // console.log("ARTICLE", article);
   const article = articles.find(article => article.slug === slug);
   console.log(article);
 
+  // Convert date to readable format
   function convertDate(dateStr) {
     const date = new Date(dateStr);
     return date.toLocaleDateString();
@@ -24,11 +29,13 @@ const Article = ({ articles }) => {
         <div className={styles.imageContainer}>
           <img src={article.imageUrl} alt={article.imageTitle} />
         </div>
+        {/* <div className={styles.contentContainer}> */}
         <h1>{article.title}</h1>
         <p className={styles.date}>
           {article.author} created at {convertDate(article.createdAt)}
         </p>
         <p className={styles.postBody}>{article.post}</p>
+        {/* </div> */}
       </div>
     </AnimatedPage>
   );
