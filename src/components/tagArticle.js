@@ -1,6 +1,6 @@
 import styles from '../styles/tagArticle.module.scss';
 import { Link } from 'react-router-dom';
-import AnimatedPage from './AnimatedPage';
+// import AnimatedPage from './AnimatedPage';
 
 const TagArticle = ({ title, description, slug }) => {
   return (
