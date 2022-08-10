@@ -7,11 +7,16 @@ const Tags = ({ articles }) => {
 
   // console.log(arr);
   // Iterate the articles array and push the unique tags to the arr array
-  const list = articles?.map(element =>
+  articles?.map(element =>
     element.tags.map(tag => {
       return arr.push(tag);
     }),
   );
+  // const list = articles?.map(element =>
+  //   element.tags.map(tag => {
+  //     return arr.push(tag);
+  //   }),
+  // );
   // Create a new array with unique tags
   const uniqueTags = [...new Set(arr)];
   // console.log(uniqueTags);
