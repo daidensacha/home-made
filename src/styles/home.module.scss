@@ -6,12 +6,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // background-image: url('../images/garden.jpg');
   .latestRecipes {
     background-color: rgba($dark, 0.6);
     padding: 0 2rem 2rem;
     border-radius: 10px;
-    // opacity: 0.4;
   }
   .h1 {
     font-family: $fontSanSerif;

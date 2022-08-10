@@ -1,0 +1,115 @@
+@import './variables.scss';
+
+.card {
+  display: flex;
+  --padding: 1rem;
+  flex: 1; // flex: 1; is equivalent to flex: 1 1 0; or flex-grow: 1; flex-shrink: 1; flex-basis: 0;
+  //
+  min-width: 100%;
+  max-width: 500px;
+  // margin: auto;
+  justify-self: center;
+  // max-width: calc(50% - 2rem);
+  // margin: 1rem;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: flex-start;
+  border-radius: 7px;
+  box-shadow: 0 2px 4px 0 #3a474e26, 0 1px 2px 0 #3a474e26;
+  background-color: rgba($body, .8);
+  overflow: hidden;
+  .header {
+    color: $cream4;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    width: 100%;
+    padding: 0;
+
+    overflow: hidden;
+    img {
+      display: block;
+      width: 100%;
+      max-height: 200px; // Limit the height of the image to 200px as screen size increases
+      margin-bottom: .5rem;
+      aspect-ratio: 16 / 9; // Set aspect raito to 16:9
+      object-fit: cover; // Scale image to cover the entire area
+      object-position: center; // Center the image within the area
+      filter: brightness(70%);
+      transition: 200ms transform ease-in-out, 200ms filter ease-in-out;
+    }
+  }
+  .body {
+    color: $dark;
+    font-size: .9rem; // from font-size: 16px;
+    margin-bottom: .5rem;
+    text-align: justify;
+    padding: 0 var(--padding);
+    .heading {
+      color: $cream4;
+      width: 100%;
+      border-radius: 5px;
+      font-family: $fontSanSerif;
+      font-size: 1.5em;
+    }
+    .description {
+      color: $dark;
+      font-size: 1rem;
+      text-align: justify;
+    }
+  }
+  .footer {
+    margin-top: 1rem;
+    padding: var(--padding);
+    padding-top: 0;
+    .btn {
+      color: darken($blueDark, 0%);
+      text-decoration: none;
+      background-color: transparent;
+      margin-bottom: .5rem;
+      padding: .25em .25em;
+      font-size: 1rem;
+      border: 1px solid $blueDark;
+      border-radius: .25em;
+      cursor: pointer;
+      transition: all 0.5s ease-out;
+      &:hover {
+        color: lighten($blueDark, 50%);
+        background-color: $blueDark;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.card:hover > .header img {
+  transform: scale(1.025);
+  filter: brightness(90%);
+}
+
+@media screen and (max-width: 650px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-start;
+    width: 100%;
+    .header {
+      width: 100%;
+      img {
+        max-height: 200px;
+      }
+    }
+    .body {
+      .heading {
+        font-size: 1.5em;
+      }
+      .description {
+        font-size: 1rem;
+      }
+    }
+    .footer {
+      .btn {
+        font-size: 1rem;
+      }
+    }
+  }
+}

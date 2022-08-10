@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedPage from './AnimatedPage';
-import ArticleIntro from './ArticleIntro';
+import ArticlesCard from './ArticlesCard';
 import Tags from './Tags';
 import Author from './Author';
 
@@ -43,7 +43,7 @@ const Articles = ({ articles }) => {
               createdAt,
             }) => {
               return (
-                <ArticleIntro
+                <ArticlesCard
                   key={id}
                   title={title}
                   description={description}

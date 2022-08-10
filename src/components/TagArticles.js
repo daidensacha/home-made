@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import AnimatedPage from './AnimatedPage';
 import Tags from './Tags';
 import Author from './Author';
-import TagArticle from './TagArticle';
+import TaggedArticlesCard from './TaggedArticlesCard';
 
 import styles from '../styles/tagArticles.module.scss';
 
@@ -52,7 +52,7 @@ const TagArticles = ({ articles }) => {
               createdAt,
             }) => {
               return (
-                <TagArticle
+                <TaggedArticlesCard
                   key={id}
                   title={title}
                   description={description}

@@ -2,22 +2,22 @@
 
 .tags {
   padding: 0.25rem;
-  margin: 1rem 0;
-  // min-width: 300px;
-  min-width: 100%; // Try to use this instead of the above line
-  max-width: calc(50% - 2rem);
+  margin: 0 0 1rem 0;
+  min-width: 100%;
+  // max-width: 500px;
+  justify-self: center;
+  // max-width: calc(50% - 2rem);
   box-shadow: 0 2px 4px #3a474e26, 0 1px 2px #3a474e26;
-  background-color: rgba($body, .8);
+  background-color: rgba($body, 0.8);
   border-radius: 5px;
   .h3 {
     color: darken($cream1, 0%);
     background-color: rgba($cream4, 1);
     border-radius: 5px;
-    padding: .3rem 0.25rem .3rem 0.25rem;
+    padding: 0.3rem 0.25rem 0.3rem 0.25rem;
     font-size: $large;
     font-weight: 700;
-    // padding: 0 10px;
-    margin: 0 0 .5rem 0;
+    margin: 0 0 0.5rem 0;
     text-align: center;
   }
   .tag {
@@ -25,7 +25,6 @@
     background-color: darken($secondary, 30%);
     padding: 0.25em 0.5em;
     text-decoration: none;
-    // display: inline-block;
     border-radius: 5px;
     margin: 0 0.25em 0.25em 0;
     float: left;
@@ -39,6 +38,8 @@
 
 @media screen and (max-width: 768px) {
   .tags {
-    min-width: 300px;
+    // min-width: 300px;
+    min-width: 100%;
+    max-width: 500px;
   }
 }

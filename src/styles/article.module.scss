@@ -1,23 +1,30 @@
 @import './variables.scss';
 
+.main {
+  padding-bottom: 0;
+  margin-top: 60px;
+}
 .post {
   background-color: rgba($body, 0.9);
-  // height: 100%;
-  min-height: calc(100vh - 120px);
+  // min-height: calc(100vh - 120px);
+  min-height: calc(100vh + 60px);
+  // margin-top: 60px;
   .imageContainer {
     width: 100%; // Set container to 100% of the width of the parent
-    height: 500px; // 500px is the height of the image container
+    // height: 500px; // 500px is the height of the image container
     overflow: hidden; // hide the overflow of the image
     img {
-      position: relative; // position the image relative to the container
+      display: block;
+      // position: relative; // position the image relative to the container
       width: 100%; // set the width of the image to 100% of the container
-      top: 50%; // set the top position of the image to 50% of the container
-      transform: translateY(-50%); // translate the image 50% down the y-axis
+      // top: 50%; // set the top position of the image to 50% of the container
+      // transform: translateY(-50%); // translate the image 50% down the y-axis
+      max-height: 400px;
+      aspect-ratio: 16 / 9; // Set aspect raito to 16:9
+      object-fit: cover; // Scale image to cover the entire area
+      object-position: center; // Center the image within the area
     }
   }
-  // .contentContainer {
-
-  // }
   p {
     margin: 0.67rem 0;
   }
@@ -28,5 +35,11 @@
     padding-bottom: 2rem;
     font-size: 1.2rem;
     text-align: justify;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    margin-top: 120px;
   }
 }
