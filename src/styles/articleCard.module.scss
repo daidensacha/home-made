@@ -36,7 +36,8 @@
       object-fit: cover; // Scale image to cover the entire area
       object-position: center; // Center the image within the area
       filter: brightness(70%);
-      transition: 200ms transform ease-in-out, 200ms filter ease-in-out;
+      // transition: 200ms transform ease-in-out, 200ms filter ease-in-out;
+      transition: 400ms transform ease-out;
     }
   }
   .body {
@@ -51,6 +52,14 @@
       border-radius: 5px;
       font-family: $fontSanSerif;
       font-size: 1.5em;
+      margin-bottom: .25em;
+    }
+    .date {
+      color: $dark;
+      font-size: .8em;
+      text-align: justify;
+      font-style: italic;
+      margin-bottom: .25em;
     }
     .description {
       color: $dark;
@@ -84,7 +93,7 @@
 
 .card:hover > .header img {
   transform: scale(1.025);
-  filter: brightness(90%);
+  // filter: brightness(90%);
 }
 
 @media screen and (max-width: 650px) {

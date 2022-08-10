@@ -51,7 +51,7 @@ const Contact = () => {
               className={styles.formControl}
               id='name'
               placeholder='Enter your name'
-              minlength="3"
+              minLength="3"
               max="10"
               pattern="[a-zA-Z0-9]+"
               required
@@ -75,7 +75,7 @@ const Contact = () => {
               className={styles.formControl}
               id='subject'
               placeholder='Enter your subject'
-              minlength="5"
+              minLength="5"
               max="15"
               required
             />

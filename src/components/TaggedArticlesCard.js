@@ -2,7 +2,13 @@ import styles from '../styles/taggedArticlesCard.module.scss';
 import { Link } from 'react-router-dom';
 // import AnimatedPage from './AnimatedPage';
 
-const TaggedArticlesCard = ({ title, description, slug, imageUrl, imageTitle }) => {
+const TaggedArticlesCard = ({ title, description, slug, imageUrl, imageTitle, createdAt }) => {
+
+  function convertDate(dateStr) {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString();
+  }
+  
   return (
     // {articles.map(article => console.log(article.fields.title))}
     // <AnimatedPage>
@@ -13,6 +19,7 @@ const TaggedArticlesCard = ({ title, description, slug, imageUrl, imageTitle }) 
       </div>
       <div className={styles.body}>
         <h3 className={styles.heading}> {title} </h3>
+        <p className={styles.date}>Created: {convertDate(createdAt)} </p>
         <p className={styles.description}> {description} </p>
       </div>
       <div className={styles.footer}>

@@ -65,7 +65,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Header />
+      <Header articles={articles}/>
       <div className='main'>
         <AnimatePresence exitBeforeEnter>
           <Routes key={location.pathname} location={location}>

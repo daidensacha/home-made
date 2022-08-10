@@ -13,17 +13,49 @@
   justify-content: space-between;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 5;
+  .queryContainer {
+    position: absolute;
+    background-color: darken($blueLight, 20%);
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 400px;
+    padding: 1em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border: 1px solid $blueDark;
+    transition: all 0.5s ease-out;
+
+    h3 {
+      color: $dark;
+      font-size: 1.5em;
+      font-weight: 700;
+      margin: 0 0 0.5em;
+    }
+    .articleLink {
+      color: lighten($primary, 10%);
+      text-decoration: none;
+    }
+  }
   .logoWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    h3 {
-      font-family: $fontHandwriting;
-      font-size: 3rem;
-      font-weight: 700;
-      color: darken($blueLight, 10%);
-      padding: 0 20px;
+    .logoLink {
+      text-decoration: none;
+      h3 {
+        font-family: $fontHandwriting;
+        font-size: 3rem;
+        font-weight: 700;
+        color: darken($blueLight, 10%);
+        padding: 0 20px;
+        transition: all 0.5s ease-out;
+        &:hover {
+          color: darken($blueLight, 0%);
+        }
+      }
     }
+
     .logo {
       width: 30px;
       height: 30px;
@@ -108,7 +140,7 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .main{
+  .main {
     margin-top: 120px;
   }
   .header {
