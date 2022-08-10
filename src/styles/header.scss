@@ -24,8 +24,11 @@
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
     border: 1px solid $blueDark;
-    transition: all 0.5s ease-out;
-
+    opacity: 0;
+    transition: opacity .5s ease-out;
+    // .show {
+    //   opacity: 1;
+    // }
     h3 {
       color: $dark;
       font-size: 1.5em;
@@ -36,6 +39,12 @@
       color: lighten($primary, 10%);
       text-decoration: none;
     }
+  }
+  .show {
+    opacity: 1;
+  }
+  .hide{
+    opacity: 0;
   }
   .logoWrapper {
     display: flex;
