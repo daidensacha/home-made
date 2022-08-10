@@ -8,7 +8,7 @@ const Author = ({ articles }) => {
       <h3 className={styles.h3}>About the Author</h3>
       <p>
         I'm passionate about preserving the old ways of growing, baking,
-        preserving, cooking. This blog is where I share the wisdom that benefits
+        pickling, cooking. This blog is where I share the wisdom that benefits
         us all.
       </p>
     </div>

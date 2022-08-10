@@ -51,6 +51,9 @@ const Contact = () => {
               className={styles.formControl}
               id='name'
               placeholder='Enter your name'
+              minlength="3"
+              max="10"
+              pattern="[a-zA-Z0-9]+"
               required
             />
             <input
@@ -61,6 +64,7 @@ const Contact = () => {
               className={styles.formControl}
               id='email'
               placeholder='Enter your email'
+              pattern='(\w\.?)+@[\w\.-]+\.\w{2,}'
               required
             />
             <input
@@ -71,6 +75,8 @@ const Contact = () => {
               className={styles.formControl}
               id='subject'
               placeholder='Enter your subject'
+              minlength="5"
+              max="15"
               required
             />
             <textarea

@@ -2,7 +2,9 @@
 
 .header {
   height: 60px;
-  background-color: rgba($blueLight, 0.9);
+  // background-color: rgba($blueDar, 0.9);
+  // background-color: darken($primary, 30%);
+  background-color: rgba(0,52,59,0.95);
   color: $dark;
   padding: 0 4rem;
   display: flex;
@@ -17,7 +19,8 @@
       font-family: $fontHandwriting;
       font-size: 3rem;
       font-weight: 700;
-      color: darken($info, 30%);
+      color: darken($blueLight, 10%);
+      // color: darken($primary, 0%);
       padding: 0 20px;
     }
     .logo {
@@ -69,20 +72,66 @@
     }
   }
   .navlink {
-    color: $grayDark;
+    // color: $grayDark;
+    color: darken($primary, 10%);
     font-size: $medium;
     font-weight: 400;
     padding: 0 10px;
     text-decoration: $none;
     transition: all 0.5s ease-out;
     &:hover {
-      color: darken($primary, 10%);
+      color: lighten($primary, 10%);
     }
     .active {
-      color: darken($primary, 20%);
+      color: darken($primary, 0%);
     }
   }
   .active {
-    color: $blueDark;
+    color: $blueLight;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 0 1rem;
+    .logoWrapper {
+      h3 {
+        font-size: 2rem;
+      }
+    }
+    .search {
+      input {
+        width: 200px;
+      }
+      button {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+    flex-direction: column;
+    height: auto;
+    .logoWrapper {
+      h3 {
+        font-size: 2rem;
+        margin: .5rem 0;
+      }
+    }
+    .search {
+      input {
+        width: 200px;
+      }
+      button {
+        width: 35px;
+        height: 35px;
+      }
+    }
+    nav {
+      margin: .5rem 0;
+    }
   }
 }

@@ -4,6 +4,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  // min-width: 300px;
+  min-width: 100%; // Try to use this instead of the above line
+  max-width: calc(50% - 2rem);
   align-items: flex-start;
   padding: 0.25rem;
   margin: 1rem 0;
@@ -26,5 +29,11 @@
     text-align: justify;
     padding: 0.5rem;
     font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .author {
+    min-width: 300px;
   }
 }
