@@ -34,7 +34,7 @@
       aspect-ratio: 16 / 9; // Set aspect raito to 16:9
       object-fit: cover; // Scale image to cover the entire area
       object-position: center; // Center the image within the area
-      filter: brightness(70%);
+      // filter: brightness(70%);
       // transition: 200ms transform ease-in-out, 200ms filter ease-in-out;
       transition: 400ms transform ease-out;
     }
