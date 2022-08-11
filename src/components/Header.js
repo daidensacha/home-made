@@ -10,27 +10,13 @@ import cx from 'classnames';
 const Header = ({ articles }) => {
   // Set state for search query
   const [query, setQuery] = useState('');
-
-  const [toggleShow, setToggleShow] = useState({
-    show: false,
-    class: '',
-  });
+  const [toggleShow, setToggleShow] = useState(false);
 
   // Handle search query and set toggle show to true or false
   const handleChange = event => {
     let lowerCaseQuery = event.target.value.toLowerCase();
     setQuery(lowerCaseQuery);
-    if (lowerCaseQuery.length > 0) {
-      setToggleShow({
-        show: true,
-        class: 'show',
-      });
-    } else {
-      setToggleShow({
-        show: false,
-        class: '',
-      });
-    }
+    lowerCaseQuery.length > 0 ? setToggleShow(true) : setToggleShow(false);
   };
   //Filter articles by search query
   const filteredData = articles.filter(article => {
@@ -40,20 +26,20 @@ const Header = ({ articles }) => {
       return article.title.toLowerCase().includes(query);
     }
   });
-  console.log('filteredData', filteredData.length);
+  // console.log('filteredData', filteredData.length);
 
   // On click of link reset toggleShow to empty seach input and hide search results
   const clickHandler = e => {
+    // Reset query value to empty string
     setQuery('');
-    setToggleShow({
-      show: false,
-      class: '',
-    });
+    // Change toggleShow from true to false
+    setToggleShow(!toggleShow);
   };
 
   return (
     <div className='header'>
-      <div className={cx(`queryContainer ${toggleShow.class}`)}>
+      {/* Display class name dependent on toggleShow value true or false */}
+      <div className={cx(`queryContainer ${toggleShow ? 'show' : ''}`)}>
         <div className='searchResults'>
           {filteredData.length ? (
             <h3>Search results for "{query}"</h3>
