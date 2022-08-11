@@ -12,11 +12,7 @@ const Tags = ({ articles }) => {
       return arr.push(tag);
     }),
   );
-  // const list = articles?.map(element =>
-  //   element.tags.map(tag => {
-  //     return arr.push(tag);
-  //   }),
-  // );
+
   // Create a new array with unique tags
   const uniqueTags = [...new Set(arr)];
   // console.log(uniqueTags);
