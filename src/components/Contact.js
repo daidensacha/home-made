@@ -2,58 +2,71 @@ import React from 'react';
 import { useState } from 'react';
 import styles from '../styles/contact.module.scss';
 import AnimatedPage from './AnimatedPage';
+import Modal from './Modal';
 import cx from 'classnames';
 
 // Import the NavLink component.
-
 const Contact = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
   const [inputValues, setInputValues] = useState({
-    name: '',
+    fullname: '',
     email: '',
     subject: '',
     message: '',
   });
-  // Handle input change.
+
   const handleChange = e => {
     e.persist();
     setInputValues({ ...inputValues, [e.target.name]: e.target.value });
+    // setInputValues({
+    //   ...inputValues,
+    //   [e.target.name]: e.target.value
+    // })
   };
+
   // Handle form submission.
   const handleSubmit = e => {
+    console.log('handleSubmit ran');
     e.preventDefault();
-    console.log(inputValues);
-    const { name, email, subject, message } = inputValues;
-
-    alert(
-      !name || !email || !subject || !message
-        ? `Missing field in your form.`
-        : `Thank you ${name} for submitting your data!`,
-    );
-    e.target.name.value = '';
-    e.target.email.value = '';
-    e.target.subject.value = '';
-    e.target.message.value = '';
-    setInputValues({ name: '', email: '', subject: '', message: '' });
+    // On form sumission toggle modalOpen state to true to open modal.
+    setModalOpen(!modalOpen);
   };
+
+  function openModal() {
+    // On closing modal toggle modalOpen state to false
+    setModalOpen(!modalOpen);
+    // On closing modal reset inputValues to empty strings
+    setInputValues({ fullname: '', email: '', subject: '', message: '' });
+  }
 
   return (
     <AnimatedPage>
       <div className={styles.main}>
-        {/* <h1 className={styles.h1}>Contact</h1> */}
+        <div className={styles.container}>
+          <Modal
+            modalOpen={modalOpen}
+            action={openModal}
+            inputValues={inputValues}
+          />
+        </div>
+
         <form className={styles.contactForm} onSubmit={e => handleSubmit(e)}>
           <h1 className={styles.h1}>Contact</h1>
+
           <div className={styles.formGroup}>
             <input
               type='text'
-              name='name'
+              name='fullname'
               onChange={e => handleChange(e)}
-              value={inputValues.name}
+              value={inputValues.fullname}
+              // onChange={handleChange}
               className={styles.formControl}
-              id='name'
-              placeholder='Enter your name'
-              minLength="3"
-              max="10"
-              pattern="[a-zA-Z0-9]+"
+              id='fullname'
+              placeholder='Enter your full name'
+              minLength='3'
+              max='10'
+              pattern='[a-zA-Z0-9 ]+'
               required
             />
             <input
@@ -75,8 +88,8 @@ const Contact = () => {
               className={styles.formControl}
               id='subject'
               placeholder='Enter your subject'
-              minLength="5"
-              max="15"
+              minLength='5'
+              max='15'
               required
             />
             <textarea
