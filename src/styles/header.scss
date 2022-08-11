@@ -18,14 +18,15 @@
     background-color: rgba($dark, 0.9);
     top: 60px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -60%) scale(0.8);
     min-width: 400px;
     padding: 1em;
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
     border: 1px solid lighten($dark, 30%);
     opacity: 0;
-    transition: opacity 0.5s ease-out;
+    // transform: scale(0.8);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     h3 {
       color: darken($light, 20%);
       font-size: 1.5em;
@@ -43,6 +44,7 @@
   }
   .show {
     opacity: 1;
+    transform: translate(-50%, 0) scale(1);
   }
   .logoWrapper {
     display: flex;
