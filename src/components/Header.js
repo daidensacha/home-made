@@ -36,6 +36,8 @@ const Header = ({ articles }) => {
     setToggleShow(!toggleShow);
   };
 
+
+
   return (
     <div className='header'>
       {/* Display class name dependent on toggleShow value true or false */}
