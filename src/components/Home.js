@@ -13,9 +13,9 @@ const Home = ({ articles }) => {
         <div className={styles.latestRecipes}>
           <h1 className={styles.h1}>Latest Articles</h1>
           <ul>
-            {/* {blogPosts.map(({fields:{title}}) => <p>{title}</p>)} */}
-            {articles?.map(({ title, id, slug }, index) => {
-              if (index < 5) {
+            {articles
+              ?.filter((item, index) => index < 5 && item)
+              .map(({ title, id, slug }) => {
                 return (
                   <li key={id} className={styles.listItem}>
                     <Link
@@ -25,10 +25,7 @@ const Home = ({ articles }) => {
                     </Link>
                   </li>
                 );
-              } else {
-                return null;
-              }
-            })}
+              })}
           </ul>
         </div>
       </div>

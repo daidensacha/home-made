@@ -30,11 +30,13 @@ const Article = ({ articles }) => {
           <div className={styles.imageContainer}>
             <img src={article.imageUrl} alt={article.imageTitle} />
           </div>
-          <h1>{article.title}</h1>
-          <p className={styles.date}>
-            {article.author} created at {convertDate(article.createdAt)}
-          </p>
-          <p className={styles.postBody}>{article.post}</p>
+          <div className={styles.content}>
+            <h1>{article.title}</h1>
+            <p className={styles.date}>
+            <strong>Author:</strong> {article.author} <strong>Created:</strong> {convertDate(article.createdAt)}
+            </p>
+            <p className={styles.postBody}>{article.post}</p>
+          </div>
         </div>
       )}
     </AnimatedPage>

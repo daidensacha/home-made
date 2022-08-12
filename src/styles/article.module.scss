@@ -25,17 +25,35 @@
       object-position: center; // Center the image within the area
     }
   }
-  p {
-    margin: 0.67rem 0;
-  }
-  .postBody {
-    color: $dark;
-    margin: 0 4rem;
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
     padding-top: 2rem;
-    padding-bottom: 2rem;
-    font-size: 1.2rem;
-    text-align: justify;
+    // columns: 50% 2;
+    // column-width: 580px;
+    // -webkit-columns: 50% 2;
+    // -moz-columns: 50% 2;
+    .author {
+      // font-style:italic;
+      font-size: .8rem;
+    }
+    .date {
+      // font-style:italic;
+      font-size: .8rem;
+    }
+    p {
+      margin: 0.67rem 0;
+    }
+    .postBody {
+      color: $dark;
+      margin: 0 4rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      font-size: 1.2rem;
+      text-align: justify;
+    }
   }
+
 }
 
 @media screen and (max-width: 768px) {
