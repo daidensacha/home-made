@@ -31,9 +31,10 @@ function App() {
       const imageUrl = fields.image.fields.file.url;
       const imageTitle = fields.image.fields.title;
       const postAuthor = fields.postAuthor.fields.authorName;
-      const authorBio = fields.postAuthor.fields.authorBio.content[0].content[0].value;
+      const authorBio = fields.postAuthor.fields.authorBio;
       const post = fields.body.content[0].content[0].value;
       const tags = metadata.tags.map(item => item.sys.id);
+      console.log("tags",tags)
       const updatedData = {
         title,
         description,
@@ -64,7 +65,7 @@ function App() {
       .then(entries => {
         // log all items that have a title
         const blogArticles = entries.items.filter(entry => entry.fields.title);
-        // console.log('blogArticles', blogArticles);
+        console.log('blogArticles', blogArticles);
         // Use cleanDate function to save select fields from the raw data to state
         cleanData(blogArticles);
       })
@@ -80,12 +81,12 @@ function App() {
       .then(entries => {
         // log all items that have a title
         const postAuthors = entries.items.filter(entry => entry.fields.authorName).reverse();
-        // console.log(postAuthors)
+        console.log(postAuthors)
         const cleanedData = postAuthors?.map(author => {
           const { fields, sys } = author;
           const { id } = sys;
-          const { authorName } = fields;
-          const  authorBio  = fields.authorBio.content[0].content[0].value;
+          const { authorName, authorBio } = fields;
+          // const  authorBio  = fields.authorBio.content[0].content[0].value;
 
           const updatedData = {
             id,
@@ -116,7 +117,7 @@ function App() {
 
             <Route
               path='/tagArticles/:tag'
-              element={<TagArticles articles={articles} authors={authors}/>}
+              element={<TagArticles articles={articles} authors={authors} />}
             />
 
             <Route

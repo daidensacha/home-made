@@ -33,7 +33,7 @@ const TagArticles = ({ articles, authors }) => {
     <AnimatedPage>
       <div className={styles.main}>
         <div className={styles.sidebar}>
-        <Accordion authors={authors}/>
+          <Accordion authors={authors} />
           {/* <Author articles={articles} /> */}
 
           <Tags articles={articles} />
@@ -52,7 +52,7 @@ const TagArticles = ({ articles, authors }) => {
               slug,
               post,
               createdAt,
-              publishDate
+              publishDate,
             }) => {
               return (
                 <TaggedArticlesCard

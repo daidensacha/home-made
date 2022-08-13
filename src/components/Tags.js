@@ -15,7 +15,7 @@ const Tags = ({ articles }) => {
 
   // Create a new array with unique tags
   const uniqueTags = [...new Set(arr)];
-  // console.log(uniqueTags);
+  console.log("uniqueTags",uniqueTags);
 
   return (
     <div className={styles.tags}>
