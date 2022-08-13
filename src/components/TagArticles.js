@@ -1,12 +1,13 @@
 import { useParams } from 'react-router-dom';
 import AnimatedPage from './AnimatedPage';
 import Tags from './Tags';
-import Author from './Author';
+import Accordion from './Accordion';
+// import Author from './Authors';
 import TaggedArticlesCard from './TaggedArticlesCard';
 
 import styles from '../styles/tagArticles.module.scss';
 
-const TagArticles = ({ articles }) => {
+const TagArticles = ({ articles, authors }) => {
   const { tag } = useParams();
   console.log('tag = ', tag);
   console.log('articles ', articles);
@@ -32,7 +33,8 @@ const TagArticles = ({ articles }) => {
     <AnimatedPage>
       <div className={styles.main}>
         <div className={styles.sidebar}>
-          <Author articles={articles} />
+        <Accordion authors={authors}/>
+          {/* <Author articles={articles} /> */}
 
           <Tags articles={articles} />
         </div>
@@ -50,6 +52,7 @@ const TagArticles = ({ articles }) => {
               slug,
               post,
               createdAt,
+              publishDate
             }) => {
               return (
                 <TaggedArticlesCard
@@ -61,6 +64,7 @@ const TagArticles = ({ articles }) => {
                   slug={slug}
                   post={post}
                   createdAt={createdAt}
+                  publishDate={publishDate}
                   articles={articles}
                 />
               );

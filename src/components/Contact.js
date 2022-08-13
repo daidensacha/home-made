@@ -51,7 +51,7 @@ const Contact = () => {
           />
         </div>
 
-        <form className={styles.contactForm} onSubmit={e => handleSubmit(e)}>
+        <form className={styles.contactForm} onSubmit={handleSubmit}>
           <h1 className={styles.h1}>Contact</h1>
 
           <div className={styles.formGroup}>

@@ -1,8 +1,8 @@
 import styles from '../styles/articleCard.module.scss';
 import { Link } from 'react-router-dom';
 
-const ArticlesCard = ({ title, description, slug, imageUrl, imageTitle, createdAt }) => {
-  
+const ArticlesCard = ({ title, description, slug, imageUrl, imageTitle, createdAt, publishDate, postAuthor }) => {
+
   function convertDate(dateStr) {
     const date = new Date(dateStr);
     return date.toLocaleDateString();
@@ -17,7 +17,7 @@ const ArticlesCard = ({ title, description, slug, imageUrl, imageTitle, createdA
       </div>
       <div className={styles.body}>
         <h3 className={styles.heading}> {title} </h3>
-        <p className={styles.date}>Created: {convertDate(createdAt)} </p>
+        <p className={styles.date}>Author: {postAuthor} Published: {convertDate(publishDate)} </p>
         <p className={styles.description}> {description} </p>
       </div>
       <div className={styles.footer}>

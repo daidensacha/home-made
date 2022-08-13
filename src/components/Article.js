@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import AnimatedPage from './AnimatedPage';
+import Markdown from 'markdown-to-jsx';
 
 import styles from '../styles/article.module.scss';
 // import ArticleIntro from './articleIntro';
@@ -8,12 +9,6 @@ const Article = ({ articles }) => {
   const { slug } = useParams();
   console.log(slug);
 
-  //
-
-  //
-  // console.log(articles);
-  // const article = articles[slug]
-  // console.log("ARTICLE", article);
   const article = articles.find(article => article.slug === slug);
   console.log(article);
 
@@ -33,9 +28,12 @@ const Article = ({ articles }) => {
           <div className={styles.content}>
             <h1>{article.title}</h1>
             <p className={styles.date}>
-            <strong>Author:</strong> {article.author} <strong>Created:</strong> {convertDate(article.createdAt)}
+              Author: {article.author}{' '}
+              Published: {convertDate(article.publishDate)}
             </p>
-            <p className={styles.postBody}>{article.post}</p>
+            <div className={styles.postBody}>
+              <Markdown>{article.postBody}</Markdown>
+            </div>
           </div>
         </div>
       )}

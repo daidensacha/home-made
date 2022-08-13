@@ -35,11 +35,13 @@
     // -moz-columns: 50% 2;
     .author {
       // font-style:italic;
+      // color: $primary;
       font-size: .8rem;
     }
     .date {
-      // font-style:italic;
+      font-style:italic;
       font-size: .8rem;
+      color: $cream4;
     }
     p {
       margin: 0.67rem 0;

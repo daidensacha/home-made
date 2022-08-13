@@ -24,7 +24,7 @@ const Modal = ({ modalOpen, action, inputValues }) => {
           </p>
           <p>
             Your message {inputValues.subject ? inputValues.subject : ''} has
-            bene received.
+            been received.
           </p>
           <p>
             We will reply to {inputValues.subject ? inputValues.email : 'you'}{' '}
