@@ -8,6 +8,7 @@ const TaggedArticlesCard = ({
   slug,
   imageUrl,
   imageTitle,
+  postAuthor,
   createdAt,
   publishDate,
 }) => {
@@ -26,7 +27,7 @@ const TaggedArticlesCard = ({
         </div>
         <div className={styles.body}>
           <h3 className={styles.heading}> {title} </h3>
-          <p className={styles.date}>Published: {convertDate(publishDate)} </p>
+          <p className={styles.date}>Author: {postAuthor} Published: {convertDate(publishDate)} </p>
           <p className={styles.description}> {description} </p>
         </div>
         <div className={styles.footer}>

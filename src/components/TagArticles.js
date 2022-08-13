@@ -51,6 +51,7 @@ const TagArticles = ({ articles, authors }) => {
               imageTitle,
               slug,
               post,
+              postAuthor,
               createdAt,
               publishDate,
             }) => {
@@ -63,6 +64,7 @@ const TagArticles = ({ articles, authors }) => {
                   imageTitle={imageTitle}
                   slug={slug}
                   post={post}
+                  postAuthor={postAuthor}
                   createdAt={createdAt}
                   publishDate={publishDate}
                   articles={articles}
