@@ -83,7 +83,7 @@ function App() {
       .getEntries()
       .then(entries => {
         // log all items that have a title
-        const postAuthors = entries.items.filter(entry => entry.fields.authorName).reverse();
+        const postAuthors = entries.items.filter(entry => entry.fields.authorName);
         console.log("postAuthors",postAuthors)
         const cleanedData = postAuthors?.map(author => {
           const { fields, sys } = author;
