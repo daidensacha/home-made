@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import AnimatedPage from './AnimatedPage';
+import AnimatedPage from './components/AnimatedPage';
 
-import styles from '../styles/Error.module.scss';
+import styles from './styles/404.module.scss';
 
 const Error = () => {
   return (

@@ -8,7 +8,6 @@ import Tags from './Tags';
 
 import styles from '../styles/articles.module.scss';
 
-
 const Articles = ({ articles, authors }) => {
   let arr = [];
   console.log('authors', authors);
@@ -25,12 +24,11 @@ const Articles = ({ articles, authors }) => {
       <div className={styles.main}>
         {/* Start sidebar */}
         <div className={styles.sidebar}>
+          <div className={styles.container}>
+            <Accordion authors={authors} />
 
-        <Accordion authors={authors}/>
-
-        {/* <Authors articles={articles} authors={authors} /> */}
-
-          <Tags articles={articles} />
+            <Tags articles={articles} />
+          </div>
         </div>
         {/* End Sidebar */}
 
@@ -47,7 +45,7 @@ const Articles = ({ articles, authors }) => {
               post,
               postAuthor,
               createdAt,
-              publishDate
+              publishDate,
             }) => {
               return (
                 <ArticlesCard

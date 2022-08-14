@@ -33,10 +33,12 @@ const TagArticles = ({ articles, authors }) => {
     <AnimatedPage>
       <div className={styles.main}>
         <div className={styles.sidebar}>
-          <Accordion authors={authors} />
-          {/* <Author articles={articles} /> */}
 
-          <Tags articles={articles} />
+          <div className={styles.container}>
+            <Accordion authors={authors} />
+
+            <Tags articles={articles} />
+          </div>
         </div>
         {/* End Sidebar */}
 

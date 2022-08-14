@@ -16,6 +16,15 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 4rem 1rem 0;
+    .container {
+      background-color: rgba($dark, .7);
+      border-radius: .25em;
+      .accordion {
+        // max-width: 600px;
+        width: 100%;
+        margin: 2rem auto;
+      }
+    }
   }
   .content {
     display: grid; // Try to use this instead flexbox

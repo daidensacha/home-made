@@ -7,7 +7,7 @@ import Article from './components/Article';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TagArticles from './components/TagArticles';
-import Error from './components/Error';
+import Error from './404';
 
 import { client } from './components/Client.js';
 import { useEffect, useState, useCallback } from 'react';
