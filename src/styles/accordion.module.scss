@@ -38,8 +38,9 @@
     text-align: justify;
     transition: all 0.3s;
     font-size: 0.8em;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: .25rem;
+    // border-bottom-left-radius: 5px;
+    // border-bottom-right-radius: 5px;
     z-index: 1;
     // scrollbar-width: thin;
     // scrollbar-color: blue orange;
@@ -80,7 +81,7 @@
     cursor: pointer;
     box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.1);
     border-radius: 0.25em;
-    background-color: darken($primary, 5%);
+    background-color: darken($primary, 10%);
     color: $cream1;
     // $cream3
     // background-color: lighten($cream2, 0%);
