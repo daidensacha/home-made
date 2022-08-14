@@ -1,0 +1,84 @@
+@import './variables.scss';
+
+.main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+  min-height: calc(100vh - 120px);
+  padding: 0 4rem;
+  margin-bottom: 3rem;
+  .sidebar {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 4rem 1rem 0;
+    .container {
+      background-color: rgba($dark, 0.7);
+      border-radius: 5px;
+      .accordion {
+        // max-width: 600px;
+        width: 100%;
+        margin: 2rem auto;
+      }
+    }
+  }
+  .content {
+    display: grid; // Try to use this instead flexbox
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: flex-start; // shrinks child elements to fit the container
+    // display: flex;
+    // justify-content: space-around;
+    // flex-wrap: wrap;
+    // align-content: flex-start;
+    width: 100%;
+    padding: 4rem 0.25rem 0.25rem 0.25rem;
+    .h3 {
+      color: $blueDark;
+      font-size: $large;
+      font-weight: 700;
+      padding: 0 10px;
+      margin: 0 0 0.5rem 0;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+    // justify-items: center;
+    // align-items: center;
+    // flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem 0;
+    .sidebar {
+      display: grid; // Try to use this instead flexbox
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+
+      // justify-items: center;
+      // align-items: center;
+      // align-items: flex-start; // shrinks child elements to fit the container
+      width: 100%;
+      // padding: 0 1rem;
+      padding: 0;
+    }
+    .content {
+      // justify-items: center;
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+// @media screen and (max-width: 768px) {
+//   .tags {
+//     // min-width: 300px;
+//     min-width: 100%;
+//     max-width: 500px;
+//   }
+// }

@@ -1,39 +1,41 @@
+import React from 'react';
 import { useParams } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import AnimatedPage from './AnimatedPage';
-import Tags from './Tags';
+import ArticlesCard from './ArticlesCard';
 import Accordion from './Accordion';
-// import Author from './Authors';
-import TaggedArticlesCard from './TaggedArticlesCard';
+import Tags from './Tags';
+// import Authors from './Authors';
 
-import styles from '../styles/tagArticles.module.scss';
+import styles from '../styles/articles.module.scss';
 
-const TagArticles = ({ articles, authors }) => {
-  const { tag } = useParams();
-  // console.log('tag = ', tag);
-  // console.log('articles ', articles);
+const AuthorArticles = ({ articles, authors }) => {
+  const { authorId } = useParams();
+  // console.log('authorId', authorId);
+  // console.log("articles", articles);
 
-  // let newArray = [];
-  // const nestedTags = articles.map(article => {
-  //   if (article.tags.includes(tag)) {
-  //     newArray.push(article);
-  //   }
-  // });
+// Filter for author articles
+  articles = articles?.filter(article => article.postAuthorId === authorId);
+  console.log("Articles",articles)
 
-  // const nestedTags2 = articles.map(article => {
-  //   article.tags.filter((tag) )
-  // })
 
-  const filteredArticles = articles.filter(article =>
-    article.tags.includes(tag),
+  let arr = [];
+  // console.log('authors', authors);
+  articles.map(element =>
+    element.tags.map(tag => {
+      return arr.push(tag);
+    }),
   );
-  console.log('filteredArticles', filteredArticles);
-  // console.log('newArray', newArray);
+  const uniqueTags = [...new Set(arr)];
+  // console.log(uniqueTags);
+
+
 
   return (
     <AnimatedPage>
       <div className={styles.main}>
+        {/* Start sidebar */}
         <div className={styles.sidebar}>
-
           <div className={styles.container}>
             <Accordion authors={authors} />
 
@@ -44,7 +46,7 @@ const TagArticles = ({ articles, authors }) => {
 
         {/* Start Main content */}
         <div className={styles.content}>
-          {filteredArticles.map(
+          {articles.map(
             ({
               title,
               description,
@@ -54,11 +56,12 @@ const TagArticles = ({ articles, authors }) => {
               slug,
               post,
               postAuthor,
+              postAuthorId,
               createdAt,
               publishDate,
             }) => {
               return (
-                <TaggedArticlesCard
+                <ArticlesCard
                   key={id}
                   title={title}
                   description={description}
@@ -66,10 +69,10 @@ const TagArticles = ({ articles, authors }) => {
                   imageTitle={imageTitle}
                   slug={slug}
                   post={post}
-                  postAuthor={postAuthor}
                   createdAt={createdAt}
                   publishDate={publishDate}
-                  articles={articles}
+                  postAuthor={postAuthor}
+                  postAuthorId={postAuthorId}
                 />
               );
             },
@@ -81,4 +84,4 @@ const TagArticles = ({ articles, authors }) => {
   );
 };
 
-export default TagArticles;
+export default AuthorArticles;

@@ -7,6 +7,8 @@ import Article from './components/Article';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TagArticles from './components/TagArticles';
+import Author from './components/Author';
+import AuthorArticles from './components/AuthorArticles';
 import Error from './404';
 
 import { client } from './components/Client.js';
@@ -25,16 +27,17 @@ function App() {
   const cleanData = useCallback(rawData => {
     const cleanedData = rawData.map(article => {
       const { sys, fields, metadata } = article;
-      const { title, description, slug, author, postBody, publishDate } =
+      const { title, description, slug, postBody, publishDate } =
         fields;
       const { id, createdAt } = sys;
       const imageUrl = fields.image.fields.file.url;
       const imageTitle = fields.image.fields.title;
       const postAuthor = fields.postAuthor.fields.authorName;
+      const postAuthorId = fields.postAuthor.sys.id;
       const authorBio = fields.postAuthor.fields.authorBio;
       const post = fields.body.content[0].content[0].value;
       const tags = metadata.tags.map(item => item.sys.id);
-      console.log("tags",tags)
+      // console.log("tags",tags)
       const updatedData = {
         title,
         description,
@@ -45,11 +48,11 @@ function App() {
         imageTitle,
         post,
         postAuthor,
+        postAuthorId,
         authorBio,
         postBody,
         publishDate,
         tags,
-        author,
       };
       return updatedData;
     });
@@ -65,7 +68,7 @@ function App() {
       .then(entries => {
         // log all items that have a title
         const blogArticles = entries.items.filter(entry => entry.fields.title);
-        console.log('blogArticles', blogArticles);
+        // console.log('blogArticles', blogArticles);
         // Use cleanDate function to save select fields from the raw data to state
         cleanData(blogArticles);
       })
@@ -81,17 +84,21 @@ function App() {
       .then(entries => {
         // log all items that have a title
         const postAuthors = entries.items.filter(entry => entry.fields.authorName).reverse();
-        console.log(postAuthors)
+        console.log("postAuthors",postAuthors)
         const cleanedData = postAuthors?.map(author => {
           const { fields, sys } = author;
           const { id } = sys;
-          const { authorName, authorBio } = fields;
-          // const  authorBio  = fields.authorBio.content[0].content[0].value;
+          const { authorName, authorBio, authorIntroduction } = fields;
+          const  authorImageTitle  = fields.authorImage.fields.title;
+          const  authorImageUrl  = fields.authorImage.fields.file.url;
 
           const updatedData = {
             id,
             authorName,
+            authorIntroduction,
             authorBio,
+            authorImageUrl,
+            authorImageTitle,
           };
           return updatedData;
         })
@@ -99,8 +106,12 @@ function App() {
       })
       .catch(err => console.log(err));
   }, []);
-  // console.log('authors', authors);
-
+  console.log('authors', authors);
+  // const authorsArticles = articles.filter(article => article.postAuthorId === "7joJ8TrNSBcUzFqkA8LxrO");
+  // console.log("authorsArticles",authorsArticles)
+  // console.log('articles', articles);
+  // const authorsArticles = articles.filter(article => article.postAuthor === "Henry Lawson");
+  // console.log('authorsArticles', authorsArticles);
 
   return (
     <div className='App'>
@@ -123,6 +134,14 @@ function App() {
             <Route
               path='/articles'
               element={<Articles articles={articles} authors={authors} />}
+            />
+            <Route
+              path='/articles/authorArticles/:authorId'
+              element={<AuthorArticles articles={articles} authors={authors} />}
+            />
+            <Route
+              path='/articles/author/:postAuthorId'
+              element={<Author articles={articles} authors={authors} />}
             />
             <Route path='/contact' element={<Contact articles={articles} />} />
 

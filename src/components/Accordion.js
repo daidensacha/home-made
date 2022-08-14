@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/accordion.module.scss';
 import { FaChevronRight } from "react-icons/fa";
 import cx from 'classnames';
 
 const Accordion = ({ authors, multiple = false }) => {
+  // console.log('authors', authors);
   const [active, setActive] = useState(0);
   // console.log(data)
 
@@ -24,7 +26,7 @@ const Accordion = ({ authors, multiple = false }) => {
   );
 };
 
-const AccordionItem = ({ id, authorName, authorBio, active, multiple, onToggle }) => {
+const AccordionItem = ({ id, authorName, authorBio, authorIntroduction, active, multiple, onToggle }) => {
   const [visibility, setVisibilty] = useState(false);
   const toggleVisibility = () => {
     setVisibilty((vis) => !vis);
@@ -41,10 +43,19 @@ const AccordionItem = ({ id, authorName, authorBio, active, multiple, onToggle }
           <FaChevronRight />
         </span>
       </div>
-      <div
-        className={styles.cardBody}
-      >
-        <div className={styles.inner}>{authorBio}</div>
+      <div className={styles.cardBody}>
+        <div className={styles.inner}>
+          <p>{authorIntroduction}</p>
+
+           {/* <Link className={styles.btn} to={`/articles/authorArticles/${id}`}>
+                View Bio
+          </Link> */}
+          <Link className={styles.btn} to={`/articles/author/${id}`}>View Bio</Link>
+          <Link className={styles.btn} to={`/articles/authorArticles/${id}`}>
+                View Articles
+          </Link>
+        </div>
+
       </div>
     </div>
   );

@@ -1,0 +1,83 @@
+@import './variables.scss';
+
+.main {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .authorBio {
+    background-color: rgba($dark, 0.6);
+    padding: 0 2rem 2rem;
+    border-radius: 10px;
+    width: 60%;
+    .h1 {
+      font-family: $fontSanSerif;
+      color: darken($blueLight,10%);
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .bioImage {
+        max-width: 250px;
+        min-width: 200px;
+        height: auto;
+        border-radius: 50%;
+        margin: 1rem .5em;
+        border: 1px solid darken($blueLight,40%);
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 50%;
+        }
+      }
+      .bioContent {
+        text-align: left;
+        .h3 {
+          font-family: $fontSanSerif;
+          color: $light;
+        }
+        p {
+          color: $light;
+          margin: 1rem 0;
+          text-align: justify;
+        }
+        .btn {
+          color: $cream1;
+          text-decoration: none;
+          background-color: lighten($blueDark, 0%);
+          margin: 1rem;
+          margin-left: 0;
+          padding: 0.25rem 0.5rem;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          transition: all 0.5s ease-out;
+          &:hover {
+            color: lighten($blueDark, 50%);
+            background-color: lighten($blueDark, 10%);
+            cursor: pointer;
+          }
+        }
+
+      }
+      // .authorName {
+      //   color: $blueLight;
+      //   font-size: $large;
+      //   font-weight: 700;
+      //   margin: 1rem 0;
+      // }
+      // .authorBio {
+      //   color: $light;
+      //   font-size: $medium;
+      //   font-weight: 400;
+      //   margin: 1rem 0;
+      // }
+    }
+
+
+  }
+
+}

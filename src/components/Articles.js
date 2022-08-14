@@ -10,7 +10,7 @@ import styles from '../styles/articles.module.scss';
 
 const Articles = ({ articles, authors }) => {
   let arr = [];
-  console.log('authors', authors);
+  // console.log('authors', authors);
   articles.map(element =>
     element.tags.map(tag => {
       return arr.push(tag);
@@ -44,6 +44,7 @@ const Articles = ({ articles, authors }) => {
               slug,
               post,
               postAuthor,
+              postAuthorId,
               createdAt,
               publishDate,
             }) => {
@@ -59,6 +60,7 @@ const Articles = ({ articles, authors }) => {
                   createdAt={createdAt}
                   publishDate={publishDate}
                   postAuthor={postAuthor}
+                  postAuthorId={postAuthorId}
                 />
               );
             },
