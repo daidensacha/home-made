@@ -37,6 +37,11 @@ const Author = ({ articles, authors }) => {
                 to={`/articles/authorArticles/${author?.id}`}>
                 View Authors Articles
               </Link>
+              <Link
+                className={styles.btn}
+                to={`/articles/`}>
+                Back to all Articles
+              </Link>
             </div>
           </div>
         </div>

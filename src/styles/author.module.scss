@@ -26,7 +26,9 @@
         height: auto;
         border-radius: 50%;
         margin: 1rem .5em;
-        border: 1px solid darken($blueLight,40%);
+        border: 2px solid darken($cream1,80%);
+        background-color: darken($cream1, 90%);;
+        padding: .5em;
         img {
           width: 100%;
           height: auto;
