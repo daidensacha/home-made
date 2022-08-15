@@ -28,7 +28,7 @@ const TaggedArticlesCard = ({
         </div>
         <div className={styles.body}>
           <h3 className={styles.heading}> {title} </h3>
-          <p className={styles.date}>Author: <Link className={styles.link} to={`/articles/author/${postAuthorId}`}>{postAuthor} </Link> Published: {convertDate(publishDate)} </p>
+          <p className={styles.date}>Author: <Link className={styles.link} to={`/articles/author/${postAuthorId}`}>{postAuthor}</Link> Published: {convertDate(publishDate)} </p>
           <p className={styles.description}> {description} </p>
         </div>
         <div className={styles.footer}>
