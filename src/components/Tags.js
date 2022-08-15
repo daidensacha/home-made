@@ -20,11 +20,13 @@ const Tags = ({ articles }) => {
   return (
     <div className={styles.tags}>
       <h3 className={styles.h3}>Tags</h3>
+      <div className={styles.container}>
       {uniqueTags?.map(tag => (
         <Link key={tag} className={styles.tag} to={`/tagArticles/${tag}`}>
           {tag}
         </Link>
       ))}
+      </div>
     </div>
   );
 };
