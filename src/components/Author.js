@@ -31,17 +31,18 @@ const Author = ({ articles, authors }) => {
               <h3 className={styles.h3}>{author?.authorName}</h3>
               <Markdown>{author?.authorBio}</Markdown>
               {/* <p>{author?.authorBio}</p> */}
-
+              <div className={styles.authorBtns}>
               <Link
                 className={styles.btn}
                 to={`/articles/authorArticles/${author?.id}`}>
-                View Authors Articles
+                Authors Articles
               </Link>
               <Link
                 className={styles.btn}
                 to={`/articles/`}>
-                Back to all Articles
+                All Articles
               </Link>
+              </div>
             </div>
           </div>
         </div>

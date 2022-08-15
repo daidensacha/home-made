@@ -17,85 +17,13 @@
     align-items: flex-start;
     padding: 4rem 1rem 0;
     .container {
-      background-color: rgba($dark, .7);
+      background-color: rgba($dark, 0.7);
       border-radius: 5px;
-      .authorsContainer {
-        width: 100%;
-        margin: 0 auto;
-        .h3 {
-          color: darken($cream1, 0%);
-          background-color: rgba($dark, .9);
-          border-radius: 5px;
-          padding: 0.3rem 0.25rem 0.3rem 0.25rem;
-          font-size: $large;
-          font-weight: 700;
-          width: 100%;
-        }
-        .card {
-          border-radius: 5px;
-          padding: 0.25em;
-          .cardBody {
-            background-color: $cardBackground;
-            width: 100%;
-            text-align: justify;
-            transition: all 0.3s;
-            font-size: 0.8em;
-            border-radius: .25rem;
-            z-index: 1;
-            .inner {
-              padding: 1em;
-              p {
-                margin-bottom: .5rem;
-              }
-            }
-          }
-          .cardHeader {
-            background-color: rgba($dark, .7);
-            border-radius: 5px;
-            // padding: .5rem;
-            .h3 {
-              color: darken($cream1, 0%);
-              background-color: darken($primary, 30%);
-              border-radius: 5px;
-              padding: 0.3rem 0.25rem 0.3rem 0.25rem;
-              font-size: $large;
-              font-weight: 700;
-              width: 100%;
-            }
-          }
-          .cardBody {
-            .btn {
-              // color: $cream1;
-              color: lighten($blueDark, 0%);
-              text-decoration: none;
-              // background-color: lighten($blueDark, 0%);
-              margin: 1rem .5em 0 0;
-              padding: 0.1em 0.5em;
-              font-size: 16px;
-              // border: 1px solid lighten($blueDark, 0%);
-              // border: none;
-              border-radius: 5px;
-              transition: all 0.5s ease-out;
-              &:hover {
-                color: lighten($blueDark, 50%);
-                // color: lighten($blueDark, 20%);
-                background-color: lighten($blueDark, 10%);
-                cursor: pointer;
-              }
-            }
-          }
-      }
-
       .accordion {
-        // max-width: 600px;
         width: 100%;
         margin: 2rem auto;
       }
     }
-
-    }
-
-
   }
   .content {
     display: grid; // Try to use this instead flexbox
@@ -117,39 +45,26 @@
     }
   }
 }
+
 @media screen and (max-width: 768px) {
   .main {
     grid-template-columns: 1fr;
-    // justify-items: center;
-    // align-items: center;
-    // flex-direction: column;
-    // justify-content: center;
     align-items: center;
     padding: 3rem 1rem 0;
     .sidebar {
-      display: grid; // Try to use this instead flexbox
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1rem;
-
-      // justify-items: center;
-    // align-items: center;
-      // align-items: flex-start; // shrinks child elements to fit the container
       width: 100%;
-      // padding: 0 1rem;
       padding: 0;
+      margin-bottom: 0.5rem;
+      .container {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
     }
     .content {
-      // justify-items: center;
       width: 100%;
       padding: 0;
     }
   }
 }
-
-// @media screen and (max-width: 768px) {
-//   .tags {
-//     // min-width: 300px;
-//     min-width: 100%;
-//     max-width: 500px;
-//   }
-// }

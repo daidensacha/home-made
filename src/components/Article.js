@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import AnimatedPage from './AnimatedPage';
 import Markdown from 'markdown-to-jsx';
 
@@ -10,7 +10,7 @@ const Article = ({ articles }) => {
   console.log(slug);
 
   const article = articles.find(article => article.slug === slug);
-  console.log(article);
+  console.log("article", article);
 
   // Convert date to readable format
   function convertDate(dateStr) {
@@ -28,7 +28,7 @@ const Article = ({ articles }) => {
           <div className={styles.content}>
             <h1>{article.title}</h1>
             <p className={styles.date}>
-              Author: {article.author}{' '}
+              Author: <Link className={styles.link} to={`/articles/author/${article.postAuthorId}`}>{article.postAuthor} </Link>{' '}
               Published: {convertDate(article.publishDate)}
             </p>
             <div className={styles.postBody}>

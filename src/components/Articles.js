@@ -108,31 +108,31 @@ const Articles = ({ articles, authors }) => {
   );
 };
 
-const AuthorIntro = ({ id, authorName, authorBio, authorIntroduction, setModalOpen, openModal  }) => {
+// const AuthorIntro = ({ id, authorName, authorBio, authorIntroduction, setModalOpen, openModal  }) => {
 
-  return (
-    <div className={styles.card}>
+//   return (
+//     <div className={styles.card}>
 
-    <div className={styles.cardHeader}>
-      <h3 className={styles.h3}>{authorName}</h3>
-    </div>
-    <div className={styles.cardBody}>
-      <div className={styles.inner}>
-        <p>{authorIntroduction}</p>
+//     <div className={styles.cardHeader}>
+//       <h3 className={styles.h3}>{authorName}</h3>
+//     </div>
+//     <div className={styles.cardBody}>
+//       <div className={styles.inner}>
+//         <p>{authorIntroduction}</p>
 
-         {/* <button className={styles.btn} onClick={openModal}>
-              View Modal
-        </button> */}
-         <Link className={styles.btn} to={`/articles/author/${id}`}>View Bio</Link>
-         <Link className={styles.btn} to={`/articles/authorArticles/${id}`}>
-              View Articles
-        </Link>
-      </div>
+//          {/* <button className={styles.btn} onClick={openModal}>
+//               View Modal
+//         </button> */}
+//          <Link className={styles.btn} to={`/articles/author/${id}`}>View Bio</Link>
+//          <Link className={styles.btn} to={`/articles/authorArticles/${id}`}>
+//               View Articles
+//         </Link>
+//       </div>
 
-    </div>
-  </div>
+//     </div>
+//   </div>
 
-  )
-}
+//   )
+// }
 
 export default Articles;

@@ -22,7 +22,7 @@
       align-items: center;
       .bioImage {
         max-width: 250px;
-        min-width: 200px;
+        min-width: 180px;
         height: auto;
         border-radius: 50%;
         margin: 1rem .5em;
@@ -47,9 +47,10 @@
           text-align: justify;
         }
         .btn {
-          color: $cream1;
+          color: darken($cream1, 20%);
           text-decoration: none;
-          background-color: lighten($blueDark, 0%);
+          display: inline-block;
+          background-color: darken($blueDark, 20%);
           margin: 1rem;
           margin-left: 0;
           padding: 0.25rem 0.5rem;
@@ -59,7 +60,7 @@
           transition: all 0.5s ease-out;
           &:hover {
             color: lighten($blueDark, 50%);
-            background-color: lighten($blueDark, 10%);
+            background-color: darken($blueDark, 10%);
             cursor: pointer;
           }
         }
@@ -83,3 +84,87 @@
   }
 
 }
+
+@media screen and (max-width: 1200px) {
+  .main {
+    .authorBio {
+      width: 80%;
+      .container {
+        // flex-direction: column;
+        .bioImage {
+          max-width: 180px;
+          min-width: 200px;
+          height: auto;
+          border-radius: 50%;
+          margin: 1rem .5em;
+          border: 2px solid darken($cream1,80%);
+          background-color: darken($cream1, 90%);;
+          padding: .5em;
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+          }
+        }
+        // .bioContent {
+        //   .authorBtns {
+        //     display: flex;
+        //     justify-content: center;
+        //   }
+        // }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .main {
+    .authorBio {
+      width: 80%;
+      .container {
+        flex-direction: column;
+        // align-items: center;
+        .bioImage {
+          max-width: 150px;
+          min-width: 100px;
+          height: auto;
+          border-radius: 50%;
+          margin: 1rem .5em;
+          border: 2px solid darken($cream1,80%);
+          background-color: darken($cream1, 90%);;
+          padding: .5em;
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+          }
+        }
+        .bioContent {
+          .authorBtns {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .bioContent {
+    .authorBtns {
+      font-size: .5em;
+    }
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .main {
+    .authorBio {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}
+

@@ -162,10 +162,13 @@
     flex-direction: column;
     height: 120px;
     .logoWrapper {
-      h3 {
-        font-size: 2rem;
-        margin: 0.5rem 0;
+      .logoLink {
+        h3 {
+          font-size: 2rem;
+          margin: 0.5rem 0;
+        }
       }
+
     }
     .search {
       input {
