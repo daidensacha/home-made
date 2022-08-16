@@ -59,3 +59,18 @@ offcanvas mobile menu.
 
 Learning the required syntax to implement SCSS, css modules, in React 18 was a steep learning curve. I still have a lot to learn
 to make the most of all Sass has to offer. Overall, it does make writing CSS easier as it cuts duplication.
+
+### Deployment
+
+I deployed the project to Netlify. Per Netlify documentation, I added a plain text file to the public root directory.
+
+The file should be named `_redirects` with no file extension. Contents in the file as follows.
+
+```text
+/*    /index.html  200
+```
+
+This allows the Netlify server to redirect 404 errors to the required page. In my case, I added a custom 404 error page so
+all 404 errors are redirected to my custom page.
+
+Overall the process of deploying was simple and straight forward using the Netlify admin panel.
