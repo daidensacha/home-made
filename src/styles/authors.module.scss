@@ -7,7 +7,6 @@
   justify-self: center;
   min-width: 100%;
   max-width: 500px;
-  // max-width: calc(50% - 2rem);
   align-items: flex-start;
   padding: 0.25rem;
   margin: 0 0 1rem 0;
@@ -37,7 +36,6 @@
 
 @media screen and (max-width: 768px) {
   .author {
-    // min-width: 300px;
     min-width: 100%;
   }
 }

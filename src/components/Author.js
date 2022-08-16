@@ -8,9 +8,6 @@ import styles from '../styles/author.module.scss';
 const Author = ({ articles, authors }) => {
   const { postAuthorId } = useParams();
 
-  //  const authorsArticles = articles.filter(article => article.postAuthorId === postAuthorId);
-  // console.log('authorsArticles', authorsArticles);
-
   const author = authors?.find(author => author.id === postAuthorId);
   // console.log('author', author);
   // console.log('authors: ', authors);

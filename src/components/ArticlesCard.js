@@ -18,8 +18,6 @@ const ArticlesCard = ({
   }
 
   return (
-    // {articles.map(article => console.log(article.fields.title))}
-
     <div className={styles.card}>
       <div className={styles.header}>
         <img src={imageUrl} alt={imageTitle} />

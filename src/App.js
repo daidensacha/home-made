@@ -74,7 +74,6 @@ function App() {
       })
       .catch(err => console.log(err));
   }, [cleanData]);
-  // console.log('Post UseEffect Articles', articles);
   // console.log(articles);
   const [authors, setAuthors] = useState();
 
@@ -107,11 +106,6 @@ function App() {
       .catch(err => console.log(err));
   }, []);
   console.log('authors', authors);
-  // const authorsArticles = articles.filter(article => article.postAuthorId === "7joJ8TrNSBcUzFqkA8LxrO");
-  // console.log("authorsArticles",authorsArticles)
-  // console.log('articles', articles);
-  // const authorsArticles = articles.filter(article => article.postAuthor === "Henry Lawson");
-  // console.log('authorsArticles', authorsArticles);
 
   return (
     <div className='App'>

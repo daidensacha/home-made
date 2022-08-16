@@ -4,13 +4,9 @@
   display: flex;
   --padding: 1rem;
   flex: 1; // flex: 1; is equivalent to flex: 1 1 0; or flex-grow: 1; flex-shrink: 1; flex-basis: 0;
-  //
   min-width: 100%;
   max-width: 500px;
-  // margin: auto;
   justify-self: center;
-  // max-width: calc(50% - 2rem);
-  // margin: 1rem;
   flex-direction: column;
   align-self: flex-start;
   align-items: flex-start;
@@ -34,8 +30,6 @@
       aspect-ratio: 16 / 9; // Set aspect raito to 16:9
       object-fit: cover; // Scale image to cover the entire area
       object-position: center; // Center the image within the area
-      // filter: brightness(70%);
-      // transition: 200ms transform ease-in-out, 200ms filter ease-in-out;
       transition: 400ms transform ease-out;
     }
   }
@@ -92,7 +86,6 @@
 
 .card:hover > .header img {
   transform: scale(1.025);
-  // filter: brightness(90%);
 }
 
 @media screen and (max-width: 650px) {

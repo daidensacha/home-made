@@ -12,7 +12,6 @@ import styles from '../styles/articles.module.scss';
 const AuthorArticles = ({ articles, authors }) => {
   const { authorId } = useParams();
   // console.log('authorId', authorId);
-  // console.log("articles", articles);
 
 // Filter for author articles
   articles = articles?.filter(article => article.postAuthorId === authorId);
@@ -28,8 +27,6 @@ const AuthorArticles = ({ articles, authors }) => {
   );
   const uniqueTags = [...new Set(arr)];
   // console.log(uniqueTags);
-
-
 
   return (
     <AnimatedPage>

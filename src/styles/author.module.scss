@@ -66,18 +66,6 @@
         }
 
       }
-      // .authorName {
-      //   color: $blueLight;
-      //   font-size: $large;
-      //   font-weight: 700;
-      //   margin: 1rem 0;
-      // }
-      // .authorBio {
-      //   color: $light;
-      //   font-size: $medium;
-      //   font-weight: 400;
-      //   margin: 1rem 0;
-      // }
     }
 
 
@@ -90,7 +78,6 @@
     .authorBio {
       width: 80%;
       .container {
-        // flex-direction: column;
         .bioImage {
           max-width: 180px;
           min-width: 200px;
@@ -106,12 +93,6 @@
             border-radius: 50%;
           }
         }
-        // .bioContent {
-        //   .authorBtns {
-        //     display: flex;
-        //     justify-content: center;
-        //   }
-        // }
       }
     }
   }
@@ -123,7 +104,6 @@
       width: 80%;
       .container {
         flex-direction: column;
-        // align-items: center;
         .bioImage {
           max-width: 150px;
           min-width: 100px;

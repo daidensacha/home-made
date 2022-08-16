@@ -12,17 +12,6 @@ const TagArticles = ({ articles, authors }) => {
   // console.log('tag = ', tag);
   // console.log('articles ', articles);
 
-  // let newArray = [];
-  // const nestedTags = articles.map(article => {
-  //   if (article.tags.includes(tag)) {
-  //     newArray.push(article);
-  //   }
-  // });
-
-  // const nestedTags2 = articles.map(article => {
-  //   article.tags.filter((tag) )
-  // })
-
   const filteredArticles = articles.filter(article =>
     article.tags.includes(tag),
   );

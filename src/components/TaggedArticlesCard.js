@@ -20,7 +20,6 @@ const TaggedArticlesCard = ({
 
   return (
     // {articles.map(article => console.log(article.fields.title))}
-    // <AnimatedPage>
     title && description && slug ? (
       <div className={styles.card}>
         <div className={styles.header}>
@@ -41,7 +40,6 @@ const TaggedArticlesCard = ({
       // render error page on 404
       <h1>Page not found</h1>
     )
-    // </AnimatedPage>
   );
 };
 
