@@ -35,7 +35,7 @@ function App() {
       const postAuthor = fields.postAuthor.fields.authorName;
       const postAuthorId = fields.postAuthor.sys.id;
       const authorBio = fields.postAuthor.fields.authorBio;
-      const post = fields.body.content[0].content[0].value;
+      // const post = fields.body.content[0].content[0].value;
       const tags = metadata.tags.map(item => item.sys.id);
       // console.log("tags",tags)
       const updatedData = {
@@ -46,7 +46,7 @@ function App() {
         createdAt,
         imageUrl,
         imageTitle,
-        post,
+        // post,
         postAuthor,
         postAuthorId,
         authorBio,
@@ -68,7 +68,7 @@ function App() {
       .then(entries => {
         // log all items that have a title
         const blogArticles = entries.items.filter(entry => entry.fields.title);
-        // console.log('blogArticles', blogArticles);
+        console.log('blogArticles', blogArticles);
         // Use cleanDate function to save select fields from the raw data to state
         cleanData(blogArticles);
       })
@@ -105,7 +105,7 @@ function App() {
       })
       .catch(err => console.log(err));
   }, []);
-  console.log('authors', authors);
+  // console.log('authors', authors);
 
   return (
     <div className='App'>
