@@ -26,6 +26,7 @@
     border: 1px solid lighten($dark, 30%);
     opacity: 0;
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    z-index: -1;
     h3 {
       color: darken($light, 20%);
       font-size: 1.5em;
