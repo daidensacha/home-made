@@ -50,4 +50,17 @@
   .main {
     margin-top: 120px;
   }
+  .post {
+    .imageContainer {
+      img {
+        max-height: 200px; // Limit the height of the image to 200px as screen size increases
+      }
+    }
+    .content {
+      .postBody {
+        margin: 0 1rem;
+      }
+    }
+  }
+
 }
