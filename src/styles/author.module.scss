@@ -13,7 +13,7 @@
     width: 60%;
     .h1 {
       font-family: $fontSanSerif;
-      color: darken($blueLight,10%);
+      color: darken($blueLight, 10%);
     }
     .container {
       display: flex;
@@ -25,10 +25,10 @@
         min-width: 180px;
         height: auto;
         border-radius: 50%;
-        margin: 1rem .5em;
-        border: 2px solid darken($cream1,80%);
-        background-color: darken($cream1, 90%);;
-        padding: .5em;
+        margin: 1rem 0.5em;
+        border: 2px solid darken($cream1, 80%);
+        background-color: darken($cream1, 90%);
+        padding: 0.5em;
         img {
           width: 100%;
           height: auto;
@@ -64,13 +64,9 @@
             cursor: pointer;
           }
         }
-
       }
     }
-
-
   }
-
 }
 
 @media screen and (max-width: 1200px) {
@@ -83,10 +79,10 @@
           min-width: 200px;
           height: auto;
           border-radius: 50%;
-          margin: 1rem .5em;
-          border: 2px solid darken($cream1,80%);
-          background-color: darken($cream1, 90%);;
-          padding: .5em;
+          margin: 1rem 0.5em;
+          border: 2px solid darken($cream1, 80%);
+          background-color: darken($cream1, 90%);
+          padding: 0.5em;
           img {
             width: 100%;
             height: auto;
@@ -109,10 +105,10 @@
           min-width: 100px;
           height: auto;
           border-radius: 50%;
-          margin: 1rem .5em;
-          border: 2px solid darken($cream1,80%);
-          background-color: darken($cream1, 90%);;
-          padding: .5em;
+          margin: 1rem 0.5em;
+          border: 2px solid darken($cream1, 80%);
+          background-color: darken($cream1, 90%);
+          padding: 0.5em;
           img {
             width: 100%;
             height: auto;
@@ -133,7 +129,7 @@
 @media screen and (max-width: 769px) {
   .bioContent {
     .authorBtns {
-      font-size: .5em;
+      font-size: 0.5em;
     }
   }
 }
@@ -145,6 +141,7 @@
       width: 100%;
       height: 100%;
       padding: 0 1em 2em;
+      border-radius: 0;
       .container {
         .bioContent {
           .btn {
@@ -160,6 +157,4 @@
       }
     }
   }
-
 }
-
