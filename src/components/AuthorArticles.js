@@ -51,7 +51,7 @@ const AuthorArticles = ({ articles, authors }) => {
               imageUrl,
               imageTitle,
               slug,
-              post,
+              postBody,
               postAuthor,
               postAuthorId,
               createdAt,
@@ -65,7 +65,7 @@ const AuthorArticles = ({ articles, authors }) => {
                   imageUrl={imageUrl}
                   imageTitle={imageTitle}
                   slug={slug}
-                  post={post}
+                  postBody={postBody}
                   createdAt={createdAt}
                   publishDate={publishDate}
                   postAuthor={postAuthor}
