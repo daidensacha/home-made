@@ -30,7 +30,7 @@ const AccordionItem = ({
   id,
   authorName,
   authorBio,
-  authorIntroduction,
+  authorIntro,
   active,
   multiple,
   onToggle,
@@ -55,7 +55,7 @@ const AccordionItem = ({
       </div>
       <div className={styles.cardBody}>
         <div className={styles.inner}>
-          <p>{authorIntroduction}</p>
+          <p>{authorIntro}</p>
           <Link className={styles.btn} to={`/articles/author/${id}`}>
             View Bio
           </Link>

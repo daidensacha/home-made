@@ -27,8 +27,7 @@ function App() {
   const cleanData = useCallback(rawData => {
     const cleanedData = rawData.map(article => {
       const { sys, fields, metadata } = article;
-      const { title, description, slug, postBody, publishDate } =
-        fields;
+      const { title, description, slug, postBody, publishDate } = fields;
       const { id, createdAt } = sys;
       const imageUrl = fields.image.fields.file.url;
       const imageTitle = fields.image.fields.title;
@@ -80,25 +79,27 @@ function App() {
       .getEntries()
       .then(entries => {
         // log all items that have a title
-        const postAuthors = entries.items.filter(entry => entry.fields.authorName);
+        const postAuthors = entries.items.filter(
+          entry => entry.fields.authorName,
+        );
         // console.log("postAuthors",postAuthors)
         const cleanedData = postAuthors?.map(author => {
           const { fields, sys } = author;
           const { id } = sys;
-          const { authorName, authorBio, authorIntroduction } = fields;
-          const  authorImageTitle  = fields.authorImage.fields.title;
-          const  authorImageUrl  = fields.authorImage.fields.file.url;
+          const { authorName, authorBio, authorIntro } = fields;
+          const authorImageTitle = fields.authorImage.fields.title;
+          const authorImageUrl = fields.authorImage.fields.file.url;
 
           const updatedData = {
             id,
             authorName,
-            authorIntroduction,
+            authorIntro,
             authorBio,
             authorImageUrl,
             authorImageTitle,
           };
           return updatedData;
-        })
+        });
         setAuthors(cleanedData);
       })
       .catch(err => console.log(err));
