@@ -10,6 +10,7 @@
   justify-content: center;
   .button {
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
     color: $light;
@@ -19,13 +20,39 @@
     padding: 5px 10px;
     margin: 0 0.25rem;
     text-decoration: $none;
-    width: 6em;
+    max-width: 10em;
     border: 1px solid darken($primary, 0%);
     border-radius: 5px;
     transition: all 0.5s ease-out;
+
     &:hover {
       color: $light;
       background-color: darken($primary, 10%);
     }
   }
+  .button + .button {
+    margin-left: 0.25rem;
+  }
+  // .left {
+  //   position: absolute;
+  //   left: 0;
+  //   top: 20%;
+  //   font-size: 5em;
+  //   width: .8em;
+  //   height: 1.4em;
+  //   background-color: rgba($dark, .6);
+  //   border-color: rgba($dark, .8);
+  //   color: rgba($cream2, .5);
+  // }
+  // .right {
+  //   position: absolute;
+  //   right: 0;
+  //   top: 20%;
+  //   font-size: 5em;
+  //   width: .8em;
+  //   height: 1.4em;
+  //   background-color: rgba($dark, .6);
+  //   border-color: rgba($dark, .8);
+  //   color: rgba($cream2, .5);
+  // }
 }
