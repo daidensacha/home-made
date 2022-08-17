@@ -5,7 +5,7 @@ import TextTruncate from 'react-text-truncate';
 
 const TaggedArticlesCard = ({
   title,
-  description,
+  // description,
   slug,
   postBody,
   imageUrl,
@@ -22,7 +22,7 @@ const TaggedArticlesCard = ({
 
   return (
     // {articles.map(article => console.log(article.fields.title))}
-    title && description && slug ? (
+    title && postBody && slug ? (
       <div className={styles.card}>
         <div className={styles.header}>
           <img src={imageUrl} alt={imageTitle} />

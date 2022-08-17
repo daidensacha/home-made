@@ -38,7 +38,6 @@ const Articles = ({ articles, authors }) => {
           {articles.map(
             ({
               title,
-              description,
               id,
               imageUrl,
               imageTitle,
@@ -54,7 +53,6 @@ const Articles = ({ articles, authors }) => {
                 <ArticlesCard
                   key={id}
                   title={title}
-                  description={description}
                   imageUrl={imageUrl}
                   imageTitle={imageTitle}
                   slug={slug}

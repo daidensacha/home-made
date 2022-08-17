@@ -27,7 +27,7 @@ function App() {
   const cleanData = useCallback(rawData => {
     const cleanedData = rawData.map(article => {
       const { sys, fields, metadata } = article;
-      const { title, description, slug, postBody, publishDate } = fields;
+      const { title, slug, postBody, publishDate } = fields;
       const { id, createdAt } = sys;
       const imageUrl = fields.image.fields.file.url;
       const imageTitle = fields.image.fields.title;
@@ -38,7 +38,6 @@ function App() {
       // console.log("tags",tags)
       const updatedData = {
         title,
-        description,
         slug,
         postBody,
         publishDate,

@@ -5,7 +5,6 @@ import styles from '../styles/articleCard.module.scss';
 
 const ArticlesCard = ({
   title,
-  description,
   postBody,
   slug,
   imageUrl,

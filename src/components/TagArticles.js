@@ -36,7 +36,7 @@ const TagArticles = ({ articles, authors }) => {
           {filteredArticles.map(
             ({
               title,
-              description,
+              // description,
               id,
               imageUrl,
               imageTitle,
@@ -51,7 +51,7 @@ const TagArticles = ({ articles, authors }) => {
                 <TaggedArticlesCard
                   key={id}
                   title={title}
-                  description={description}
+                  // description={description}
                   imageUrl={imageUrl}
                   imageTitle={imageTitle}
                   slug={slug}
