@@ -61,11 +61,19 @@
       font-size: 1rem;
       text-align: justify;
     }
+    a.readMoreLink {
+      text-decoration: none;
+      display: inline-block;
+      color: lighten($blueDark, 0%);
+      &:hover {
+        color: lighten($blueDark, 20%);
+      }
+    }
   }
   .footer {
     margin-top: 1rem;
-    padding: var(--padding);
-    padding-top: 0;
+    // padding: var(--padding);
+    // padding-top: 0;
     .btn {
       color: darken($blueDark, 0%);
       text-decoration: none;

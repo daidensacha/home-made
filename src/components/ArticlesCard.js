@@ -1,9 +1,12 @@
-import styles from '../styles/articleCard.module.scss';
 import { Link } from 'react-router-dom';
+import TextTruncate from 'react-text-truncate';
+import styles from '../styles/articleCard.module.scss';
+
 
 const ArticlesCard = ({
   title,
   description,
+  postBody,
   slug,
   imageUrl,
   imageTitle,
@@ -31,12 +34,23 @@ const ArticlesCard = ({
           </Link>{' '}
           Published: {convertDate(publishDate)}{' '}
         </p>
-        <p className={styles.description}> {description} </p>
+        <TextTruncate
+          line={3}
+          element="p"
+          truncateText=" …"
+          text={postBody}
+          textTruncateChild={
+            <Link className={styles.readMoreLink} to={`/article/${slug}`}>
+              Read More
+            </Link>
+          }
+        />
+        {/* <p className={styles.description}> {description} </p> */}
       </div>
       <div className={styles.footer}>
-        <Link className={styles.btn} to={`/article/${slug}`}>
+        {/* <Link className={styles.btn} to={`/article/${slug}`}>
           Read More
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 // import { Link } from 'react-router-dom';
 import AnimatedPage from './AnimatedPage';
+
 import ArticlesCard from './ArticlesCard';
 import Accordion from './Accordion';
 import Tags from './Tags';
@@ -42,7 +43,8 @@ const Articles = ({ articles, authors }) => {
               imageUrl,
               imageTitle,
               slug,
-              post,
+              // post,
+              postBody,
               postAuthor,
               postAuthorId,
               createdAt,
@@ -56,7 +58,7 @@ const Articles = ({ articles, authors }) => {
                   imageUrl={imageUrl}
                   imageTitle={imageTitle}
                   slug={slug}
-                  post={post}
+                  postBody={postBody}
                   createdAt={createdAt}
                   publishDate={publishDate}
                   postAuthor={postAuthor}
