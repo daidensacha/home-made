@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from '../styles/accordion.module.scss';
 import { FaChevronRight } from 'react-icons/fa';
 import cx from 'classnames';
+import TextTruncate from 'react-text-truncate';
 
 const Accordion = ({ authors, multiple = false }) => {
   // console.log('authors', authors);
@@ -30,7 +31,6 @@ const AccordionItem = ({
   id,
   authorName,
   authorBio,
-  authorIntro,
   active,
   multiple,
   onToggle,
@@ -55,13 +55,27 @@ const AccordionItem = ({
       </div>
       <div className={styles.cardBody}>
         <div className={styles.inner}>
-          <p>{authorIntro}</p>
-          <Link className={styles.btn} to={`/articles/author/${id}`}>
-            View Bio
+          {/* <p>{authorIntro}</p> */}
+          <TextTruncate
+            line={3}
+            element='p'
+            truncateText=' …'
+            text={authorBio}
+            textTruncateChild={
+                <Link className={styles.link} to={`/articles/author/${id}`}>
+                  Read on
+                </Link>
+            }
+          />
+          <Link className={styles.link} to={`/articles/authorArticles/${id}`}>
+            Authors Articles
           </Link>
-          <Link className={styles.btn} to={`/articles/authorArticles/${id}`}>
+          {/* <Link className={styles.btn} to={`/articles/author/${id}`}>
+            Read on
+          </Link> */}
+          {/* <Link className={styles.btn} to={`/articles/authorArticles/${id}`}>
             View Articles
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

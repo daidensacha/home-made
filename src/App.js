@@ -40,16 +40,16 @@ function App() {
         title,
         description,
         slug,
-        id,
-        createdAt,
-        imageUrl,
-        imageTitle,
-        postAuthor,
-        postAuthorId,
-        authorBio,
         postBody,
         publishDate,
-        tags,
+        id,
+        createdAt,
+        imageUrl, // fields.image.fields.file.url
+        imageTitle, // fields.image.fields.title
+        postAuthor, // fields.postAuthor.fields.authorName
+        postAuthorId, // fields.postAuthor.sys.id
+        authorBio, // fields.postAuthor.fields.authorBio
+        tags, // metadata.tags.map(item => item.sys.id) = Array of tag IDs
       };
       return updatedData;
     });
@@ -86,17 +86,17 @@ function App() {
         const cleanedData = postAuthors?.map(author => {
           const { fields, sys } = author;
           const { id } = sys;
-          const { authorName, authorBio, authorIntro } = fields;
+          const { authorName, authorBio, createdAt } = fields;
           const authorImageTitle = fields.authorImage.fields.title;
           const authorImageUrl = fields.authorImage.fields.file.url;
 
           const updatedData = {
             id,
             authorName,
-            authorIntro,
             authorBio,
-            authorImageUrl,
-            authorImageTitle,
+            authorImageUrl, // fields.authorImage.fields.file.url
+            authorImageTitle, // fields.authorImage.fields.title
+            createdAt,
           };
           return updatedData;
         });

@@ -8,7 +8,7 @@
   z-index: 1;
   .h3 {
     color: darken($cream1, 0%);
-    background-color: rgba($dark, .9);
+    background-color: rgba($dark, 0.9);
     border-radius: 5px;
     padding: 0.3rem 0.25rem 0.3rem 0.25rem;
     font-size: $large;
@@ -32,26 +32,37 @@
     text-align: justify;
     transition: all 0.3s;
     font-size: 0.8em;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     z-index: 1;
     .inner {
       padding: 1em;
       height: 0;
       p {
-        margin-bottom: .5rem;
+        margin-bottom: 0.25rem;
+        a {
+          text-decoration: none;
+          display: inline-block;
+          color: lighten($blueDark, 0%);
+          &:hover {
+            color: lighten($blueDark, 20%);
+          }
+        }
       }
     }
-
+    // a:nth-child(2) {
+    //   display: inline-block;
+    //   margin-right: 1em;
+    // }
   }
   .accordionActive .cardBody {
     display: block;
     opacity: 1;
-    height: 110px;
+    height: 100px;
     overflow-y: scroll;
     .btn {
       color: lighten($blueDark, 0%);
       text-decoration: none;
-      margin: 1rem .5em 0 0;
+      margin: 1rem 0.5em 0 0;
       padding: 0.1em 0.5em;
       font-size: 16px;
       border-radius: 5px;
@@ -61,6 +72,17 @@
         background-color: lighten($blueDark, 10%);
         cursor: pointer;
       }
+    }
+    a {
+      text-decoration: none;
+      display: inline-block;
+      color: lighten($blueDark, 0%);
+      &:hover {
+        color: lighten($blueDark, 20%);
+      }
+    }
+    a + a {
+      margin-left: 1em;
     }
   }
   .accordionActive .accordionIcon {
@@ -94,7 +116,7 @@
     min-width: 250px;
     flex: 1;
     .card {
-      margin-top: .25em;
+      margin-top: 0.25em;
     }
     .cardHeader {
       height: 1.8em;
