@@ -27,7 +27,7 @@ function App() {
   const cleanData = useCallback(rawData => {
     const cleanedData = rawData.map(article => {
       const { sys, fields, metadata } = article;
-      const { title, slug, postBody, publishDate } = fields;
+      const { title, postBody, publishDate } = fields;
       const { id, createdAt } = sys;
       const imageUrl = fields.image.fields.file.url;
       const imageTitle = fields.image.fields.title;
@@ -38,7 +38,7 @@ function App() {
       // console.log("tags",tags)
       const updatedData = {
         title,
-        slug,
+        // slug,
         postBody,
         publishDate,
         id,
@@ -114,7 +114,7 @@ function App() {
             <Route path='/' element={<Home articles={articles} />} />
 
             <Route
-              path='/article/:slug'
+              path='/article/:id'
               element={<Article articles={articles} />}
             />
 

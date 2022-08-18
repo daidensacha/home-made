@@ -6,10 +6,10 @@ import styles from '../styles/article.module.scss';
 // import ArticleIntro from './articleIntro';
 
 const Article = ({ articles }) => {
-  const { slug } = useParams();
-  console.log(slug);
+  const { id } = useParams();
+  console.log(id);
 
-  const article = articles.find(article => article.slug === slug);
+  const article = articles.find(article => article.id === id);
   console.log('article', article);
 
   // Convert date to readable format

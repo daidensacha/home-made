@@ -52,6 +52,7 @@ const Articles = ({ articles, authors }) => {
               return (
                 <ArticlesCard
                   key={id}
+                  id={id}
                   title={title}
                   imageUrl={imageUrl}
                   imageTitle={imageTitle}

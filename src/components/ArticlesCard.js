@@ -4,6 +4,7 @@ import styles from '../styles/articleCard.module.scss';
 
 
 const ArticlesCard = ({
+  id,
   title,
   postBody,
   slug,
@@ -39,7 +40,7 @@ const ArticlesCard = ({
           truncateText=" …"
           text={postBody}
           textTruncateChild={
-            <Link className={styles.readMoreLink} to={`/article/${slug}`}>
+            <Link className={styles.readMoreLink} to={`/article/${id}`}>
               Read More
             </Link>
           }

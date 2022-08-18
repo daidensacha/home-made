@@ -4,6 +4,7 @@ import TextTruncate from 'react-text-truncate';
 // import AnimatedPage from './AnimatedPage';
 
 const TaggedArticlesCard = ({
+  id,
   title,
   // description,
   slug,
@@ -37,7 +38,7 @@ const TaggedArticlesCard = ({
             truncateText=" …"
             text={postBody}
             textTruncateChild={
-              <Link className={styles.readMoreLink} to={`/article/${slug}`}>
+              <Link className={styles.readMoreLink} to={`/article/${id}`}>
                 Read More
               </Link>
             }

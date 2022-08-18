@@ -20,7 +20,7 @@ const Home = ({ articles }) => {
                   <li key={id} className={styles.listItem}>
                     <Link
                       className={styles.articleLink}
-                      to={`/article/${slug}`}>
+                      to={`/article/${id}`}>
                       {title}
                     </Link>
                   </li>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/accordion.module.scss';
 import { FaChevronRight } from 'react-icons/fa';
@@ -63,12 +63,12 @@ const AccordionItem = ({
             text={authorBio}
             textTruncateChild={
                 <Link className={styles.link} to={`/articles/author/${id}`}>
-                  Read on
+                  Read on >
                 </Link>
             }
           />
           <Link className={styles.link} to={`/articles/authorArticles/${id}`}>
-            Authors Articles
+            Authors Articles >
           </Link>
           {/* <Link className={styles.btn} to={`/articles/author/${id}`}>
             Read on

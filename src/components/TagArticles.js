@@ -50,6 +50,7 @@ const TagArticles = ({ articles, authors }) => {
               return (
                 <TaggedArticlesCard
                   key={id}
+                  id={id}
                   title={title}
                   // description={description}
                   imageUrl={imageUrl}
