@@ -1,5 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { client } from './components/Client.js';
+import { useEffect, useState, useCallback } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import Articles from './components/Articles';
@@ -10,15 +12,22 @@ import TagArticles from './components/TagArticles';
 import Author from './components/Author';
 import AuthorArticles from './components/AuthorArticles';
 import Error from './404';
+import jsonArticles from './data/articles';
+import jsonAuthors from './data/authors';
 
-import { client } from './components/Client.js';
-import { useEffect, useState, useCallback } from 'react';
+
+
 
 // Import style sheets
 import 'normalize.css';
 import './App.scss';
 
 function App() {
+
+  console.log("jsonArticles",jsonArticles);
+  console.log("jsonAuthors",jsonAuthors);
+  
+
   const location = useLocation();
 
   const [articles, setArticles] = useState([]);
@@ -70,7 +79,9 @@ function App() {
       })
       .catch(err => console.log(err));
   }, [cleanData]);
-  // console.log(articles);
+  console.log(articles);
+  const articleJson = JSON.stringify(articles);
+  // console.log("articleJson",articleJson);
   const [authors, setAuthors] = useState();
 
   useEffect(() => {
@@ -104,6 +115,8 @@ function App() {
       .catch(err => console.log(err));
   }, []);
   // console.log('authors', authors);
+  const authorJson = JSON.stringify(authors);
+  console.log('authorJson', authorJson);
 
   return (
     <div className='App'>
