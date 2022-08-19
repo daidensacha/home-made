@@ -1,5 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { client } from './components/Client.js';
+import { useEffect, useState, useCallback } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import Articles from './components/Articles';
@@ -11,9 +13,6 @@ import Author from './components/Author';
 import AuthorArticles from './components/AuthorArticles';
 import Error from './404';
 
-import { client } from './components/Client.js';
-import { useEffect, useState, useCallback } from 'react';
-
 // Import style sheets
 import 'normalize.css';
 import './App.scss';
@@ -22,7 +21,6 @@ function App() {
   const location = useLocation();
 
   const [articles, setArticles] = useState([]);
-  // const [blogData, setBlogData] = useState([]);
 
   const cleanData = useCallback(rawData => {
     const cleanedData = rawData.map(article => {
@@ -38,7 +36,6 @@ function App() {
       // console.log("tags",tags)
       const updatedData = {
         title,
-        // slug,
         postBody,
         publishDate,
         id,
