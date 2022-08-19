@@ -26,93 +26,29 @@ function App() {
 
   console.log("jsonArticles",jsonArticles);
   console.log("jsonAuthors",jsonAuthors);
-  
+
 
   const location = useLocation();
 
   const [articles, setArticles] = useState([]);
+  const [authors, setAuthors] = useState();
   // const [blogData, setBlogData] = useState([]);
 
-  const cleanData = useCallback(rawData => {
-    const cleanedData = rawData.map(article => {
-      const { sys, fields, metadata } = article;
-      const { title, postBody, publishDate } = fields;
-      const { id, createdAt } = sys;
-      const imageUrl = fields.image.fields.file.url;
-      const imageTitle = fields.image.fields.title;
-      const postAuthor = fields.postAuthor.fields.authorName;
-      const postAuthorId = fields.postAuthor.sys.id;
-      const authorBio = fields.postAuthor.fields.authorBio;
-      const tags = metadata.tags.map(item => item.sys.id);
-      // console.log("tags",tags)
-      const updatedData = {
-        title,
-        // slug,
-        postBody,
-        publishDate,
-        id,
-        createdAt,
-        imageUrl, // fields.image.fields.file.url
-        imageTitle, // fields.image.fields.title
-        postAuthor, // fields.postAuthor.fields.authorName
-        postAuthorId, // fields.postAuthor.sys.id
-        authorBio, // fields.postAuthor.fields.authorBio
-        tags, // metadata.tags.map(item => item.sys.id) = Array of tag IDs
-      };
-      return updatedData;
-    });
-    setArticles(cleanedData);
-  }, []);
+
 
   // cleanData();
   // console.log('Pre useEffect Aticles', articles);
 
   useEffect(() => {
-    client
-      .getEntries()
-      .then(entries => {
-        // log all items that have a title
-        const blogArticles = entries.items.filter(entry => entry.fields.title);
-        // console.log('blogArticles', blogArticles);
-        // Use cleanDate function to save select fields from the raw data to state
-        cleanData(blogArticles);
-      })
-      .catch(err => console.log(err));
-  }, [cleanData]);
+    setArticles(jsonArticles);
+  }, []);
   console.log(articles);
-  const articleJson = JSON.stringify(articles);
+  // const articleJson = JSON.stringify(articles);
   // console.log("articleJson",articleJson);
-  const [authors, setAuthors] = useState();
+
 
   useEffect(() => {
-    client
-      .getEntries()
-      .then(entries => {
-        // log all items that have a title
-        const postAuthors = entries.items.filter(
-          entry => entry.fields.authorName,
-        );
-        // console.log("postAuthors",postAuthors)
-        const cleanedData = postAuthors?.map(author => {
-          const { fields, sys } = author;
-          const { id } = sys;
-          const { authorName, authorBio, createdAt } = fields;
-          const authorImageTitle = fields.authorImage.fields.title;
-          const authorImageUrl = fields.authorImage.fields.file.url;
-
-          const updatedData = {
-            id,
-            authorName,
-            authorBio,
-            authorImageUrl, // fields.authorImage.fields.file.url
-            authorImageTitle, // fields.authorImage.fields.title
-            createdAt,
-          };
-          return updatedData;
-        });
-        setAuthors(cleanedData);
-      })
-      .catch(err => console.log(err));
+    setAuthors(jsonAuthors);
   }, []);
   // console.log('authors', authors);
   const authorJson = JSON.stringify(authors);
