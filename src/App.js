@@ -24,25 +24,19 @@ import './App.scss';
 
 function App() {
 
-  console.log("jsonArticles",jsonArticles);
-  console.log("jsonAuthors",jsonAuthors);
-
+  // console.log("jsonArticles",jsonArticles);
+  // console.log("jsonAuthors",jsonAuthors);
 
   const location = useLocation();
 
   const [articles, setArticles] = useState([]);
   const [authors, setAuthors] = useState();
-  // const [blogData, setBlogData] = useState([]);
-
-
-
-  // cleanData();
-  // console.log('Pre useEffect Aticles', articles);
 
   useEffect(() => {
     setArticles(jsonArticles);
   }, []);
-  console.log(articles);
+  console.log("atcicles", articles);
+  // Save articles data to 
   // const articleJson = JSON.stringify(articles);
   // console.log("articleJson",articleJson);
 
@@ -50,9 +44,9 @@ function App() {
   useEffect(() => {
     setAuthors(jsonAuthors);
   }, []);
-  // console.log('authors', authors);
-  const authorJson = JSON.stringify(authors);
-  console.log('authorJson', authorJson);
+  console.log('authors', authors);
+  // const authorJson = JSON.stringify(authors);
+  // console.log('authorJson', authorJson);
 
   return (
     <div className='App'>
