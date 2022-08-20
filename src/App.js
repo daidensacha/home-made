@@ -12,8 +12,8 @@ import TagArticles from './components/TagArticles';
 import Author from './components/Author';
 import AuthorArticles from './components/AuthorArticles';
 import Error from './404';
-import jsonArticles from './data/articles';
-import jsonAuthors from './data/authors';
+import jsonArticles from './data/articles_db';
+import jsonAuthors from './data/authors_db';
 
 
 
@@ -35,8 +35,8 @@ function App() {
   useEffect(() => {
     setArticles(jsonArticles);
   }, []);
-  console.log("atcicles", articles);
-  // Save articles data to 
+  // console.log("atcicles", articles);
+  // Save articles data to
   // const articleJson = JSON.stringify(articles);
   // console.log("articleJson",articleJson);
 
@@ -44,7 +44,7 @@ function App() {
   useEffect(() => {
     setAuthors(jsonAuthors);
   }, []);
-  console.log('authors', authors);
+  // console.log('authors', authors);
   // const authorJson = JSON.stringify(authors);
   // console.log('authorJson', authorJson);
 
@@ -58,7 +58,7 @@ function App() {
 
             <Route
               path='/article/:id'
-              element={<Article articles={articles} />}
+              element={<Article articles={articles} authors={authors} />}
             />
 
             <Route
@@ -71,11 +71,11 @@ function App() {
               element={<Articles articles={articles} authors={authors} />}
             />
             <Route
-              path='/articles/authorArticles/:authorId'
+              path='/articles/authorArticles/:author_id' // authorId
               element={<AuthorArticles articles={articles} authors={authors} />}
             />
             <Route
-              path='/articles/author/:postAuthorId'
+              path='/articles/author/:author_id' // postAuthorId
               element={<Author articles={articles} authors={authors} />}
             />
             <Route path='/contact' element={<Contact articles={articles} />} />

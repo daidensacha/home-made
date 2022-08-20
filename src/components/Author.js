@@ -6,10 +6,10 @@ import Markdown from 'markdown-to-jsx';
 import styles from '../styles/author.module.scss';
 
 const Author = ({ articles, authors }) => {
-  const { postAuthorId } = useParams();
+  const { author_id } = useParams();
 
-  const author = authors?.find(author => author.id === postAuthorId);
-  // console.log('author', author);
+  const author = authors?.find(author => author.id === author_id);
+  console.log('author', author);
   // console.log('authors: ', authors);
 
   return (
@@ -20,13 +20,13 @@ const Author = ({ articles, authors }) => {
           <div className={styles.container}>
             <div className={styles.bioImage}>
               <img
-                src={author?.authorImageUrl}
-                alt={author?.authorImageTitle}
+                src={author?.image_url}
+                alt={author?.image_title}
               />
             </div>
             <div className={styles.bioContent}>
-              <h3 className={styles.h3}>{author?.authorName}</h3>
-              <Markdown>{author?.authorBio}</Markdown>
+              <h3 className={styles.h3}>{author?.name}</h3>
+              <Markdown>{author?.bio}</Markdown>
               {/* <p>{author?.authorBio}</p> */}
               <div className={styles.authorBtns}>
               <Link

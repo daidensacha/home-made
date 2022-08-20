@@ -10,11 +10,11 @@ import Tags from './Tags';
 import styles from '../styles/articles.module.scss';
 
 const AuthorArticles = ({ articles, authors }) => {
-  const { authorId } = useParams();
-  // console.log('authorId', authorId);
+  const { author_id } = useParams();
+  // console.log('author_id', author_id);
 
 // Filter for author articles
-  articles = articles?.filter(article => article.postAuthorId === authorId);
+  articles = articles?.filter(article => article.author_id === author_id);
   console.log("Articles",articles)
 
 
@@ -48,29 +48,26 @@ const AuthorArticles = ({ articles, authors }) => {
               title,
               // description,
               id,
-              imageUrl,
-              imageTitle,
-              slug,
-              postBody,
-              postAuthor,
-              postAuthorId,
-              createdAt,
-              publishDate,
+              image_url,
+              image_title,
+              body,
+              author,
+              author_id,
+              created_at,
+              published_at,
             }) => {
               return (
                 <ArticlesCard
                   key={id}
                   id={id}
                   title={title}
-                  // description={description}
-                  imageUrl={imageUrl}
-                  imageTitle={imageTitle}
-                  slug={slug}
-                  postBody={postBody}
-                  createdAt={createdAt}
-                  publishDate={publishDate}
-                  postAuthor={postAuthor}
-                  postAuthorId={postAuthorId}
+                  image_url={image_url}
+                  image_title={image_title}
+                  body={body}
+                  created_at={created_at}
+                  published_at={published_at}
+                  author={author}
+                  author_id={author_id}
                 />
               );
             },
