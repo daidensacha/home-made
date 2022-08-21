@@ -7,7 +7,7 @@ const ArticlesCard = ({
   id,
   title,
   postBody,
-  slug,
+  // slug,
   imageUrl,
   imageTitle,
   createdAt,

@@ -50,7 +50,7 @@ const AuthorArticles = ({ articles, authors }) => {
               id,
               imageUrl,
               imageTitle,
-              slug,
+              // slug,
               postBody,
               postAuthor,
               postAuthorId,
@@ -65,7 +65,7 @@ const AuthorArticles = ({ articles, authors }) => {
                   // description={description}
                   imageUrl={imageUrl}
                   imageTitle={imageTitle}
-                  slug={slug}
+                  // slug={slug}
                   postBody={postBody}
                   createdAt={createdAt}
                   publishDate={publishDate}
