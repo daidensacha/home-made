@@ -43,6 +43,7 @@ const Articles = ({ articles, authors }) => {
               image_title,
               body,
               author,
+              author_id,
               created_at,
               published_at,
             }) => {
@@ -57,6 +58,7 @@ const Articles = ({ articles, authors }) => {
                   created_at={created_at}
                   published_at={published_at}
                   author={author}
+                  author_id={author_id}
                 />
               );
             },

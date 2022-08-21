@@ -12,8 +12,8 @@ import TagArticles from './components/TagArticles';
 import Author from './components/Author';
 import AuthorArticles from './components/AuthorArticles';
 import Error from './404';
-import jsonArticles from './data/articles_db';
-import jsonAuthors from './data/authors_db';
+import jsonArticles from './data/db_articles';
+import jsonAuthors from './data/db_authors';
 
 
 
