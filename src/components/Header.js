@@ -18,6 +18,7 @@ const Header = ({ articles }) => {
     setQuery(lowerCaseQuery);
     lowerCaseQuery.length > 0 ? setToggleShow(true) : setToggleShow(false);
   };
+  // console.log('filter-articles', articles);
   //Filter articles by search query
   const filteredData = articles.filter(article => {
     if (!query) {

@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { client } from './components/Client.js';
-import { useEffect, useState, useCallback } from 'react';
+// import { client } from './components/Client.js';
+import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import Articles from './components/Articles';
@@ -12,8 +12,8 @@ import TagArticles from './components/TagArticles';
 import Author from './components/Author';
 import AuthorArticles from './components/AuthorArticles';
 import Error from './404';
-import jsonArticles from './data/db_articles';
-import jsonAuthors from './data/db_authors';
+// import jsonArticles from './data/db_articles';
+// import jsonAuthors from './data/db_authors';
 
 
 
@@ -32,21 +32,86 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [authors, setAuthors] = useState();
 
+
   useEffect(() => {
-    setArticles(jsonArticles);
+    const endpoint = 'http://localhost:3008/posts';
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch(endpoint);
+        if (!response.ok) {
+          throw new Error('Something went wrong');
+        }
+        const results = await response.json();
+        // console.log('articleResults', results);
+        const cleanedArticles = results.map(article => {
+          const { id, title, body, author, author_id, published_at, tags } = article;
+          const image_title  = article.image.title;
+          const image_url = article.image.url;
+          const updatedData = {
+            id,
+            title,
+            image_url,
+            image_title,
+            body,
+            author,
+            author_id,
+            published_at,
+            tags
+          };
+          return updatedData;
+        })
+        setArticles(cleanedArticles);
+      }
+      catch (error) {
+        console.log(error);
+      }
+    };
+    fetchArticles();
+    // setArticles(jsonArticles);
   }, []);
-  // console.log("atcicles", articles);
+  console.log("postCleanArticles", articles);
   // Save articles data to
   // const articleJson = JSON.stringify(articles);
   // console.log("articleJson",articleJson);
 
 
   useEffect(() => {
-    setAuthors(jsonAuthors);
+    const endpoint = 'http://localhost:3008/authors';
+    const fetchAuthors = async () => {
+      try {
+        const response = await fetch(endpoint);
+        if (!response.ok) {
+          throw new Error('Something went wrong');
+        }
+        const results = await response.json();
+        const cleanedAuthors = results.map(author => {
+          const { id, name, bio, created_at } = author;
+          const image_title  = author.image.title;
+          const image_url = author.image.url;
+          const updatedData = {
+            id,
+            name,
+            image_url,
+            image_title,
+            bio,
+            created_at,
+          };
+          return updatedData;
+        })
+        setAuthors(cleanedAuthors);
+      }
+      catch (error) {
+        console.log(error);
+      }
+    };
+    fetchAuthors();
+    // setAuthors(jsonAuthors);
   }, []);
   // console.log('authors', authors);
   // const authorJson = JSON.stringify(authors);
   // console.log('authorJson', authorJson);
+  console.log('appArticles', articles);
+  console.log('appAuthors', authors);
 
   return (
     <div className='App'>

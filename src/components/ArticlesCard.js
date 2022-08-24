@@ -9,7 +9,6 @@ const ArticlesCard = ({
   body,
   image_url,
   image_title,
-  created_at,
   published_at,
   author,
   author_id,

@@ -11,14 +11,15 @@ import styles from '../styles/articles.module.scss';
 
 const Articles = ({ articles, authors }) => {
   let arr = [];
-  // console.log('authors', authors);
+  // console.log('articlesJsAuthors', authors);
+  // console.log('articlesJsArticles', articles);
   articles.map(element =>
     element.tags.map(tag => {
       return arr.push(tag);
     }),
   );
   const uniqueTags = [...new Set(arr)];
-  // console.log(uniqueTags);
+  console.log(uniqueTags);
 
   return (
     <AnimatedPage>
@@ -44,7 +45,6 @@ const Articles = ({ articles, authors }) => {
               body,
               author,
               author_id,
-              created_at,
               published_at,
             }) => {
               return (
@@ -55,7 +55,6 @@ const Articles = ({ articles, authors }) => {
                   image_url={image_url}
                   image_title={image_title}
                   body={body}
-                  created_at={created_at}
                   published_at={published_at}
                   author={author}
                   author_id={author_id}

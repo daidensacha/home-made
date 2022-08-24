@@ -8,7 +8,7 @@ import styles from '../styles/author.module.scss';
 const Author = ({ articles, authors }) => {
   const { author_id } = useParams();
 
-  const author = authors?.find(author => author.id === author_id);
+  const author = authors?.find(author => author.id === parseInt(author_id));
   console.log('author', author);
   // console.log('authors: ', authors);
 
@@ -26,8 +26,8 @@ const Author = ({ articles, authors }) => {
             </div>
             <div className={styles.bioContent}>
               <h3 className={styles.h3}>{author?.name}</h3>
-              <Markdown>{author?.bio}</Markdown>
-              {/* <p>{author?.authorBio}</p> */}
+              {/* <Markdown>{author?.bio}</Markdown> */}
+              <p>{author?.bio}</p>
               <div className={styles.authorBtns}>
               <Link
                 className={styles.btn}

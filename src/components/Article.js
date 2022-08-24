@@ -7,14 +7,15 @@ import styles from '../styles/article.module.scss';
 
 const Article = ({ articles, authors }) => {
   const { id } = useParams();
-  // console.log(id);
-  console.log('articles', articles);
-  console.log('authors', authors);
-  const article = articles.find(article => article.id === id);
-  console.log('article', article);
+  // console.log("id",typeof id);
+  // console.log('articles', articles);
+  // console.log('authors', authors);
 
-  const author = authors.find(author => author.id === article.author_id);
-  console.log('author', author);
+  const article = articles.find(article => article.id === parseInt(id));
+  console.log('findArticle', article);
+
+  // const author = authors?.find(author => author.id === article.author_id);
+  // console.log('author', author);
   // Convert date to readable format
   function convertDate(dateStr) {
     const date = new Date(dateStr);

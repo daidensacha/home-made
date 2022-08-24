@@ -11,10 +11,10 @@ import styles from '../styles/articles.module.scss';
 
 const AuthorArticles = ({ articles, authors }) => {
   const { author_id } = useParams();
-  // console.log('author_id', author_id);
-
+  console.log('author_id', parseInt(author_id));
+  console.log("Articles",articles)
 // Filter for author articles
-  articles = articles?.filter(article => article.author_id === author_id);
+  articles = articles?.filter(article => article.author_id === parseInt(author_id));
   console.log("Articles",articles)
 
 
