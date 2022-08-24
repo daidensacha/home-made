@@ -36,31 +36,27 @@ const TagArticles = ({ articles, authors }) => {
           {filteredArticles.map(
             ({
               title,
-              // description,
               id,
-              imageUrl,
-              imageTitle,
-              // slug,
-              postBody,
-              postAuthor,
-              postAuthorId,
-              createdAt,
-              publishDate,
+              image_url,
+              image_title,
+              body,
+              author,
+              author_id,
+              created_at,
+              published_at,
             }) => {
               return (
                 <TaggedArticlesCard
                   key={id}
                   id={id}
                   title={title}
-                  // description={description}
-                  imageUrl={imageUrl}
-                  imageTitle={imageTitle}
-                  // slug={slug}
-                  postBody={postBody}
-                  postAuthor={postAuthor}
-                  postAuthorId={postAuthorId}
-                  createdAt={createdAt}
-                  publishDate={publishDate}
+                  image_url={image_url}
+                  image_title={image_title}
+                  body={body}
+                  author={author}
+                  author_id={author_id}
+                  created_at={created_at}
+                  published_at={published_at}
                   articles={articles}
                 />
               );

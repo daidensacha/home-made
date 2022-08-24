@@ -39,29 +39,26 @@ const Articles = ({ articles, authors }) => {
             ({
               title,
               id,
-              imageUrl,
-              imageTitle,
-              // slug,
-              // post,
-              postBody,
-              postAuthor,
-              postAuthorId,
-              createdAt,
-              publishDate,
+              image_url,
+              image_title,
+              body,
+              author,
+              author_id,
+              created_at,
+              published_at,
             }) => {
               return (
                 <ArticlesCard
                   key={id}
                   id={id}
                   title={title}
-                  imageUrl={imageUrl}
-                  imageTitle={imageTitle}
-                  // slug={slug}
-                  postBody={postBody}
-                  createdAt={createdAt}
-                  publishDate={publishDate}
-                  postAuthor={postAuthor}
-                  postAuthorId={postAuthorId}
+                  image_url={image_url}
+                  image_title={image_title}
+                  body={body}
+                  created_at={created_at}
+                  published_at={published_at}
+                  author={author}
+                  author_id={author_id}
                 />
               );
             },

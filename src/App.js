@@ -1,5 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { client } from './components/Client.js';
+import { useEffect, useState, useCallback } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import Articles from './components/Articles';
@@ -10,100 +12,41 @@ import TagArticles from './components/TagArticles';
 import Author from './components/Author';
 import AuthorArticles from './components/AuthorArticles';
 import Error from './404';
+import jsonArticles from './data/db_articles';
+import jsonAuthors from './data/db_authors';
 
-import { client } from './components/Client.js';
-import { useEffect, useState, useCallback } from 'react';
+
+
 
 // Import style sheets
 import 'normalize.css';
 import './App.scss';
 
 function App() {
+
+  // console.log("jsonArticles",jsonArticles);
+  // console.log("jsonAuthors",jsonAuthors);
+
   const location = useLocation();
 
   const [articles, setArticles] = useState([]);
-  // const [blogData, setBlogData] = useState([]);
-
-  const cleanData = useCallback(rawData => {
-    const cleanedData = rawData.map(article => {
-      const { sys, fields, metadata } = article;
-      const { title, postBody, publishDate } = fields;
-      const { id, createdAt } = sys;
-      const imageUrl = fields.image.fields.file.url;
-      const imageTitle = fields.image.fields.title;
-      const postAuthor = fields.postAuthor.fields.authorName;
-      const postAuthorId = fields.postAuthor.sys.id;
-      const authorBio = fields.postAuthor.fields.authorBio;
-      const tags = metadata.tags.map(item => item.sys.id);
-      // console.log("tags",tags)
-      const updatedData = {
-        title,
-        // slug,
-        postBody,
-        publishDate,
-        id,
-        createdAt,
-        imageUrl, // fields.image.fields.file.url
-        imageTitle, // fields.image.fields.title
-        postAuthor, // fields.postAuthor.fields.authorName
-        postAuthorId, // fields.postAuthor.sys.id
-        authorBio, // fields.postAuthor.fields.authorBio
-        tags, // metadata.tags.map(item => item.sys.id) = Array of tag IDs
-      };
-      return updatedData;
-    });
-    setArticles(cleanedData);
-  }, []);
-
-  // cleanData();
-  // console.log('Pre useEffect Aticles', articles);
-
-  useEffect(() => {
-    client
-      .getEntries()
-      .then(entries => {
-        // log all items that have a title
-        const blogArticles = entries.items.filter(entry => entry.fields.title);
-        // console.log('blogArticles', blogArticles);
-        // Use cleanDate function to save select fields from the raw data to state
-        cleanData(blogArticles);
-      })
-      .catch(err => console.log(err));
-  }, [cleanData]);
-  // console.log(articles);
   const [authors, setAuthors] = useState();
 
   useEffect(() => {
-    client
-      .getEntries()
-      .then(entries => {
-        // log all items that have a title
-        const postAuthors = entries.items.filter(
-          entry => entry.fields.authorName,
-        );
-        // console.log("postAuthors",postAuthors)
-        const cleanedData = postAuthors?.map(author => {
-          const { fields, sys } = author;
-          const { id } = sys;
-          const { authorName, authorBio, createdAt } = fields;
-          const authorImageTitle = fields.authorImage.fields.title;
-          const authorImageUrl = fields.authorImage.fields.file.url;
+    setArticles(jsonArticles);
+  }, []);
+  // console.log("atcicles", articles);
+  // Save articles data to
+  // const articleJson = JSON.stringify(articles);
+  // console.log("articleJson",articleJson);
 
-          const updatedData = {
-            id,
-            authorName,
-            authorBio,
-            authorImageUrl, // fields.authorImage.fields.file.url
-            authorImageTitle, // fields.authorImage.fields.title
-            createdAt,
-          };
-          return updatedData;
-        });
-        setAuthors(cleanedData);
-      })
-      .catch(err => console.log(err));
+
+  useEffect(() => {
+    setAuthors(jsonAuthors);
   }, []);
   // console.log('authors', authors);
+  // const authorJson = JSON.stringify(authors);
+  // console.log('authorJson', authorJson);
 
   return (
     <div className='App'>
@@ -115,7 +58,7 @@ function App() {
 
             <Route
               path='/article/:id'
-              element={<Article articles={articles} />}
+              element={<Article articles={articles} authors={authors} />}
             />
 
             <Route
@@ -128,11 +71,11 @@ function App() {
               element={<Articles articles={articles} authors={authors} />}
             />
             <Route
-              path='/articles/authorArticles/:authorId'
+              path='/articles/authorArticles/:author_id' // authorId
               element={<AuthorArticles articles={articles} authors={authors} />}
             />
             <Route
-              path='/articles/author/:postAuthorId'
+              path='/articles/author/:author_id' // postAuthorId
               element={<Author articles={articles} authors={authors} />}
             />
             <Route path='/contact' element={<Contact articles={articles} />} />

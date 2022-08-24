@@ -6,7 +6,7 @@ import cx from 'classnames';
 import TextTruncate from 'react-text-truncate';
 
 const Accordion = ({ authors, multiple = false }) => {
-  // console.log('authors', authors);
+  console.log('authors', authors);
   const [active, setActive] = useState(0);
   // console.log(data)
 
@@ -29,8 +29,8 @@ const Accordion = ({ authors, multiple = false }) => {
 
 const AccordionItem = ({
   id,
-  authorName,
-  authorBio,
+  name,
+  bio,
   active,
   multiple,
   onToggle,
@@ -48,7 +48,7 @@ const AccordionItem = ({
         `${styles.card} ${isActive() ? styles.accordionActive : ''}`,
       )}>
       <div className={styles.cardHeader} onClick={toggleVisibility}>
-        {authorName}
+        {name}
         <span className={styles.accordionIcon}>
           <FaChevronRight />
         </span>
@@ -60,7 +60,7 @@ const AccordionItem = ({
             line={3}
             element='p'
             truncateText=' …'
-            text={authorBio}
+            text={bio}
             textTruncateChild={
                 <Link className={styles.link} to={`/articles/author/${id}`}>
                   Read on >
