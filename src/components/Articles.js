@@ -10,14 +10,14 @@ import Tags from './Tags';
 import styles from '../styles/articles.module.scss';
 
 const Articles = ({ articles, authors }) => {
-  let arr = [];
+  // let arr = [];
   // console.log('authors', authors);
-  articles.map(element =>
-    element.tags.map(tag => {
-      return arr.push(tag);
-    }),
-  );
-  const uniqueTags = [...new Set(arr)];
+  // articles.map(element =>
+  //   element.tags.map(tag => {
+  //     return arr.push(tag);
+  //   }),
+  // );
+  // const uniqueTags = [...new Set(arr)];
   // console.log(uniqueTags);
 
   return (
@@ -41,8 +41,6 @@ const Articles = ({ articles, authors }) => {
               id,
               imageUrl,
               imageTitle,
-              // slug,
-              // post,
               postBody,
               postAuthor,
               postAuthorId,
@@ -56,7 +54,6 @@ const Articles = ({ articles, authors }) => {
                   title={title}
                   imageUrl={imageUrl}
                   imageTitle={imageTitle}
-                  // slug={slug}
                   postBody={postBody}
                   createdAt={createdAt}
                   publishDate={publishDate}

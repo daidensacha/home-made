@@ -18,14 +18,14 @@ const AuthorArticles = ({ articles, authors }) => {
   console.log("Articles",articles)
 
 
-  let arr = [];
+  // let arr = [];
   // console.log('authors', authors);
-  articles.map(element =>
-    element.tags.map(tag => {
-      return arr.push(tag);
-    }),
-  );
-  const uniqueTags = [...new Set(arr)];
+  // articles.map(element =>
+  //   element.tags.map(tag => {
+  //     return arr.push(tag);
+  //   }),
+  // );
+  // const uniqueTags = [...new Set(arr)];
   // console.log(uniqueTags);
 
   return (
