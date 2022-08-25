@@ -74,3 +74,19 @@ This allows the Netlify server to redirect 404 errors to the required page. In m
 all 404 errors are redirected to my custom page.
 
 Overall the process of deploying was simple and straight forward using the Netlify admin panel.
+
+### Homemade API
+
+There are now three branches of this project in addition to the main branch which continues to access data from Contentful headless CMS.
+
+1. `homemade-contentful` <br />
+   Accesses data from the Contentful headless CMS.
+
+2. `homemade-json` <br />
+   Accesses data from json files in in `src/data` directory.  <br />
+   This version was the transitional version to prepare for accessing data from the Homemade API.
+
+3. `homemade-api-data` <br />
+   This version fetches data from the Homemade API serving data from a postgreSQL database.
+
+Source code for the Homemade API can be found in the [homemade-server-api](https://github.com/daidensacha/homemade-server-api) repo.
