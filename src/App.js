@@ -38,7 +38,6 @@ function App() {
       // console.log("tags",tags)
       const updatedData = {
         title,
-        // slug,
         postBody,
         publishDate,
         id,
@@ -55,8 +54,10 @@ function App() {
     setArticles(cleanedData);
   }, []);
 
-  // cleanData();
-  // console.log('Pre useEffect Aticles', articles);
+  // console.log('Aticles', articles);
+  // Get to save contentful articles data to json file
+  const articleJson = JSON.stringify(articles);
+  console.log("articleJson",articleJson);
 
   useEffect(() => {
     client
@@ -104,6 +105,9 @@ function App() {
       .catch(err => console.log(err));
   }, []);
   // console.log('authors', authors);
+  // Get to save contentful authors data to json file
+  const authorJson = JSON.stringify(authors);
+  console.log('authorJson', authorJson);
 
   return (
     <div className='App'>
