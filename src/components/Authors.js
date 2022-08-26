@@ -1,8 +1,6 @@
-// import { Link } from 'react-router-dom';
-
 import styles from '../styles/authors.module.scss';
 
-const Authors = ({ articles, authors }) => {
+const Authors = ({ authors }) => {
   return (
     <div className={styles.authors}>
       <h3 className={styles.h3}>About the Authors</h3>

@@ -3,7 +3,6 @@ import AnimatedPage from './AnimatedPage';
 import Markdown from 'markdown-to-jsx';
 
 import styles from '../styles/article.module.scss';
-// import ArticleIntro from './articleIntro';
 
 const Article = ({ articles }) => {
   const { id } = useParams();

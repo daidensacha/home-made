@@ -5,7 +5,6 @@ import AnimatedPage from './AnimatedPage';
 import Modal from './Modal';
 import cx from 'classnames';
 
-// Import the NavLink component.
 const Contact = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -19,10 +18,6 @@ const Contact = () => {
   const handleChange = e => {
     e.persist();
     setInputValues({ ...inputValues, [e.target.name]: e.target.value });
-    // setInputValues({
-    //   ...inputValues,
-    //   [e.target.name]: e.target.value
-    // })
   };
 
   // Handle form submission.

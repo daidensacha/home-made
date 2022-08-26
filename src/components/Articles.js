@@ -1,24 +1,12 @@
-// import { Link } from 'react-router-dom';
 import AnimatedPage from './AnimatedPage';
 
 import ArticlesCard from './ArticlesCard';
 import Accordion from './Accordion';
 import Tags from './Tags';
-// import AuthorModal from './AuthorModal';
-// import Authors from './Authors';
 
 import styles from '../styles/articles.module.scss';
 
 const Articles = ({ articles, authors }) => {
-  let arr = [];
-  // console.log('authors', authors);
-  articles.map(element =>
-    element.tags.map(tag => {
-      return arr.push(tag);
-    }),
-  );
-  const uniqueTags = [...new Set(arr)];
-  // console.log(uniqueTags);
 
   return (
     <AnimatedPage>
@@ -27,7 +15,6 @@ const Articles = ({ articles, authors }) => {
         <div className={styles.sidebar}>
           <div className={styles.container}>
             <Accordion authors={authors} />
-
             <Tags articles={articles} />
           </div>
         </div>
@@ -41,8 +28,6 @@ const Articles = ({ articles, authors }) => {
               id,
               imageUrl,
               imageTitle,
-              slug,
-              // post,
               postBody,
               postAuthor,
               postAuthorId,
@@ -56,7 +41,6 @@ const Articles = ({ articles, authors }) => {
                   title={title}
                   imageUrl={imageUrl}
                   imageTitle={imageTitle}
-                  slug={slug}
                   postBody={postBody}
                   createdAt={createdAt}
                   publishDate={publishDate}

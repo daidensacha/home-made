@@ -4,7 +4,6 @@ import AnimatedPage from './AnimatedPage';
 import { Link } from 'react-router-dom';
 
 import styles from '../styles/home.module.scss';
-// Import the NavLink component.
 
 const Home = ({ articles }) => {
   return (
@@ -15,7 +14,7 @@ const Home = ({ articles }) => {
           <ul>
             {articles
               ?.filter((item, index) => index < 5 && item)
-              .map(({ title, id, slug }) => {
+              .map(({ title, id }) => {
                 return (
                   <li key={id} className={styles.listItem}>
                     <Link

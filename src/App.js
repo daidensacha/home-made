@@ -33,7 +33,6 @@ function App() {
       const postAuthorId = fields.postAuthor.sys.id;
       const authorBio = fields.postAuthor.fields.authorBio;
       const tags = metadata.tags.map(item => item.sys.id);
-      // console.log("tags",tags)
       const updatedData = {
         title,
         postBody,
@@ -52,22 +51,17 @@ function App() {
     setArticles(cleanedData);
   }, []);
 
-  // cleanData();
-  // console.log('Pre useEffect Aticles', articles);
-
   useEffect(() => {
     client
       .getEntries()
       .then(entries => {
         // log all items that have a title
         const blogArticles = entries.items.filter(entry => entry.fields.title);
-        // console.log('blogArticles', blogArticles);
         // Use cleanDate function to save select fields from the raw data to state
         cleanData(blogArticles);
       })
       .catch(err => console.log(err));
   }, [cleanData]);
-  // console.log(articles);
   const [authors, setAuthors] = useState();
 
   useEffect(() => {
@@ -78,7 +72,6 @@ function App() {
         const postAuthors = entries.items.filter(
           entry => entry.fields.authorName,
         );
-        // console.log("postAuthors",postAuthors)
         const cleanedData = postAuthors?.map(author => {
           const { fields, sys } = author;
           const { id } = sys;
@@ -100,7 +93,6 @@ function App() {
       })
       .catch(err => console.log(err));
   }, []);
-  // console.log('authors', authors);
 
   return (
     <div className='App'>

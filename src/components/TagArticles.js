@@ -2,21 +2,16 @@ import { useParams } from 'react-router-dom';
 import AnimatedPage from './AnimatedPage';
 import Tags from './Tags';
 import Accordion from './Accordion';
-// import Author from './Authors';
 import TaggedArticlesCard from './TaggedArticlesCard';
 
 import styles from '../styles/tagArticles.module.scss';
 
 const TagArticles = ({ articles, authors }) => {
   const { tag } = useParams();
-  // console.log('tag = ', tag);
-  // console.log('articles ', articles);
 
   const filteredArticles = articles.filter(article =>
     article.tags.includes(tag),
   );
-  console.log('filteredArticles', filteredArticles);
-  // console.log('newArray', newArray);
 
   return (
     <AnimatedPage>
@@ -36,11 +31,9 @@ const TagArticles = ({ articles, authors }) => {
           {filteredArticles.map(
             ({
               title,
-              // description,
               id,
               imageUrl,
               imageTitle,
-              slug,
               postBody,
               postAuthor,
               postAuthorId,
@@ -52,10 +45,8 @@ const TagArticles = ({ articles, authors }) => {
                   key={id}
                   id={id}
                   title={title}
-                  // description={description}
                   imageUrl={imageUrl}
                   imageTitle={imageTitle}
-                  slug={slug}
                   postBody={postBody}
                   postAuthor={postAuthor}
                   postAuthorId={postAuthorId}

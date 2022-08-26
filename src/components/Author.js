@@ -5,12 +5,10 @@ import Markdown from 'markdown-to-jsx';
 
 import styles from '../styles/author.module.scss';
 
-const Author = ({ articles, authors }) => {
+const Author = ({ authors }) => {
   const { postAuthorId } = useParams();
 
   const author = authors?.find(author => author.id === postAuthorId);
-  // console.log('author', author);
-  // console.log('authors: ', authors);
 
   return (
     <AnimatedPage>
@@ -27,7 +25,6 @@ const Author = ({ articles, authors }) => {
             <div className={styles.bioContent}>
               <h3 className={styles.h3}>{author?.authorName}</h3>
               <Markdown>{author?.authorBio}</Markdown>
-              {/* <p>{author?.authorBio}</p> */}
               <div className={styles.authorBtns}>
               <Link
                 className={styles.btn}
