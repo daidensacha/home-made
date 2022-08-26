@@ -5,7 +5,6 @@ import styles from '../styles/tags.module.scss';
 const Tags = ({ articles }) => {
   let arr = [];
 
-  // console.log(arr);
   // Iterate the articles array and push the unique tags to the arr array
   articles?.map(element =>
     element.tags.map(tag => {
@@ -15,7 +14,6 @@ const Tags = ({ articles }) => {
 
   // Create a new array with unique tags
   const uniqueTags = [...new Set(arr)];
-  // console.log("uniqueTags",uniqueTags);
 
   return (
     <div className={styles.tags}>

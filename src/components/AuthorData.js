@@ -9,7 +9,6 @@ const AuthorData = () => {
     client
       .getEntries()
       .then(entries => {
-        // log all items that have a title
         const postAuthors = entries.items.filter(entry => entry.fields.authorName);
 
         const cleanedData = postAuthors?.map(author => {
@@ -27,10 +26,6 @@ const AuthorData = () => {
       })
       .catch(err => console.log(err));
   }, []);
-  console.log('authors', authors);
-  // return (
-
-  // )
 }
 
 export default AuthorData;

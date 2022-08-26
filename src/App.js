@@ -54,10 +54,9 @@ function App() {
     setArticles(cleanedData);
   }, []);
 
-  // console.log('Aticles', articles);
   // Get to save contentful articles data to json file
-  const articleJson = JSON.stringify(articles);
-  console.log("articleJson",articleJson);
+  // const articleJson = JSON.stringify(articles);
+  // console.log("articleJson",articleJson);
 
   useEffect(() => {
     client
@@ -65,13 +64,11 @@ function App() {
       .then(entries => {
         // log all items that have a title
         const blogArticles = entries.items.filter(entry => entry.fields.title);
-        // console.log('blogArticles', blogArticles);
         // Use cleanDate function to save select fields from the raw data to state
         cleanData(blogArticles);
       })
       .catch(err => console.log(err));
   }, [cleanData]);
-  // console.log(articles);
   const [authors, setAuthors] = useState();
 
   useEffect(() => {
@@ -82,7 +79,6 @@ function App() {
         const postAuthors = entries.items.filter(
           entry => entry.fields.authorName,
         );
-        // console.log("postAuthors",postAuthors)
         const cleanedData = postAuthors?.map(author => {
           const { fields, sys } = author;
           const { id } = sys;
@@ -104,10 +100,9 @@ function App() {
       })
       .catch(err => console.log(err));
   }, []);
-  // console.log('authors', authors);
   // Get to save contentful authors data to json file
-  const authorJson = JSON.stringify(authors);
-  console.log('authorJson', authorJson);
+  // const authorJson = JSON.stringify(authors);
+  // console.log('authorJson', authorJson);
 
   return (
     <div className='App'>

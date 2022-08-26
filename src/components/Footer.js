@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../styles/footer.module.scss';
 import {FaAngleLeft, FaAngleRight} from 'react-icons/fa';
 
-
 const Footer = () => {
   // Get the history object
   const history = useNavigate();
@@ -21,8 +20,6 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      {/* <button className={`${styles.button} ${styles.left}`} onClick={goBack}><FaAngleLeft /></button>
-      <button className={`${styles.button} ${styles.right}`} onClick={goForward}><FaAngleRight /></button> */}
       <button className={styles.button} onClick={goBack}><FaAngleLeft /> Back</button>
       <button className={styles.button} onClick={goForward}>Forward <FaAngleRight /></button>
     </footer>

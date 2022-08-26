@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import TextTruncate from 'react-text-truncate';
 import styles from '../styles/articleCard.module.scss';
 
-
 const ArticlesCard = ({
   id,
   title,
@@ -43,12 +42,8 @@ const ArticlesCard = ({
             </Link>
           }
         />
-        {/* <p className={styles.description}> {description} </p> */}
       </div>
       <div className={styles.footer}>
-        {/* <Link className={styles.btn} to={`/article/${slug}`}>
-          Read More
-        </Link> */}
       </div>
     </div>
   );
