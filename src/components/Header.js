@@ -51,7 +51,7 @@ const Header = ({ articles }) => {
               <div key={article.id}>
                 <NavLink
                   className='articleLink'
-                  to={`/article/${article.slug}`}
+                  to={`/article/${article.id}`}
                   onClick={clickHandler}>
                   {article.title}
                 </NavLink>
