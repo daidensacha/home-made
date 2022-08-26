@@ -2,7 +2,6 @@ import CloseButton from './CloseButton';
 import styles from '../styles/modal.module.scss';
 
 const Modal = ({ modalOpen, action, inputValues }) => {
-  // const { fullname, email, subject } = inputValues;
   console.log(
     'Modal',
     inputValues.fullname,

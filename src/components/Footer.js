@@ -21,8 +21,6 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      {/* <button className={`${styles.button} ${styles.left}`} onClick={goBack}><FaAngleLeft /></button>
-      <button className={`${styles.button} ${styles.right}`} onClick={goForward}><FaAngleRight /></button> */}
       <button className={styles.button} onClick={goBack}><FaAngleLeft /> Back</button>
       <button className={styles.button} onClick={goForward}>Forward <FaAngleRight /></button>
     </footer>

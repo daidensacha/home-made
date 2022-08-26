@@ -1,25 +1,12 @@
-// import { Link } from 'react-router-dom';
 import AnimatedPage from './AnimatedPage';
 
 import ArticlesCard from './ArticlesCard';
 import Accordion from './Accordion';
 import Tags from './Tags';
-// import AuthorModal from './AuthorModal';
-// import Authors from './Authors';
 
 import styles from '../styles/articles.module.scss';
 
 const Articles = ({ articles, authors }) => {
-  let arr = [];
-  // console.log('articlesJsAuthors', authors);
-  // console.log('articlesJsArticles', articles);
-  articles.map(element =>
-    element.tags.map(tag => {
-      return arr.push(tag);
-    }),
-  );
-  const uniqueTags = [...new Set(arr)];
-  console.log(uniqueTags);
 
   return (
     <AnimatedPage>

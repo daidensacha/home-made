@@ -4,7 +4,6 @@ import AnimatedPage from './AnimatedPage';
 import { Link } from 'react-router-dom';
 
 import styles from '../styles/home.module.scss';
-// Import the NavLink component.
 
 const Home = ({ articles }) => {
   return (
@@ -14,6 +13,7 @@ const Home = ({ articles }) => {
           <h1 className={styles.h1}>Latest Articles</h1>
           <ul>
             {articles
+            // filter and display links to latest 5 articles on homepage
               ?.filter((item, index) => index < 5 && item)
               .map(({ title, id }) => {
                 return (

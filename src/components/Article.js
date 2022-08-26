@@ -3,19 +3,13 @@ import AnimatedPage from './AnimatedPage';
 import Markdown from 'markdown-to-jsx';
 
 import styles from '../styles/article.module.scss';
-// import ArticleIntro from './articleIntro';
 
 const Article = ({ articles, authors }) => {
   const { id } = useParams();
-  // console.log("id",typeof id);
-  // console.log('articles', articles);
-  // console.log('authors', authors);
 
   const article = articles.find(article => article.id === parseInt(id));
   console.log('findArticle', article);
 
-  // const author = authors?.find(author => author.id === article.author_id);
-  // console.log('author', author);
   // Convert date to readable format
   function convertDate(dateStr) {
     const date = new Date(dateStr);

@@ -6,15 +6,12 @@ import cx from 'classnames';
 import TextTruncate from 'react-text-truncate';
 
 const Accordion = ({ authors, multiple = false }) => {
-  console.log('authors', authors);
   const [active, setActive] = useState(0);
-  // console.log(data)
 
   return (
     <div className={styles.customAccordion}>
       <h3 className={styles.h3}>About the Authors</h3>
       {authors?.map((tab, index) => (
-        // tab.key
         <AccordionItem
           key={tab.id}
           {...tab}
@@ -55,7 +52,6 @@ const AccordionItem = ({
       </div>
       <div className={styles.cardBody}>
         <div className={styles.inner}>
-          {/* <p>{authorIntro}</p> */}
           <TextTruncate
             line={3}
             element='p'
@@ -63,19 +59,13 @@ const AccordionItem = ({
             text={bio}
             textTruncateChild={
                 <Link className={styles.link} to={`/articles/author/${id}`}>
-                  Read on >
+                  Read on &gt;
                 </Link>
             }
           />
           <Link className={styles.link} to={`/articles/authorArticles/${id}`}>
-            Authors Articles >
+            Authors Articles &gt;
           </Link>
-          {/* <Link className={styles.btn} to={`/articles/author/${id}`}>
-            Read on
-          </Link> */}
-          {/* <Link className={styles.btn} to={`/articles/authorArticles/${id}`}>
-            View Articles
-          </Link> */}
         </div>
       </div>
     </div>
