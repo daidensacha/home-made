@@ -6,9 +6,9 @@ import styles from '../styles/article.module.scss';
 
 const Article = ({ articles, authors }) => {
   const { id } = useParams();
-
+  // Convert id to integer as it is a string in the url ???
   const article = articles.find(article => article.id === parseInt(id));
-  console.log('findArticle', article);
+  // console.log('findArticle', article);
 
   // Convert date to readable format
   function convertDate(dateStr) {
