@@ -20,7 +20,6 @@
     margin-bottom: .5rem;
     width: 100%;
     padding: 0;
-
     overflow: hidden;
     img {
       display: block;
@@ -54,11 +53,6 @@
       font-style: italic;
       margin-bottom: .25em;
     }
-    // .description {
-    //   color: $dark;
-    //   font-size: 1rem;
-    //   text-align: justify;
-    // }
     a.readMoreLink {
       text-decoration: none;
       display: inline-block;
@@ -70,8 +64,6 @@
   }
   .footer {
     margin-top: 1rem;
-    // padding: var(--padding);
-    // padding-top: 0;
     .btn {
       color: darken($blueDark, 0%);
       text-decoration: none;
@@ -112,9 +104,6 @@
       .heading {
         font-size: 1.5em;
       }
-      // .description {
-      //   font-size: 1rem;
-      // }
     }
     .footer {
       .btn {

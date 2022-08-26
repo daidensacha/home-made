@@ -28,9 +28,6 @@ const AuthorData = () => {
       .catch(err => console.log(err));
   }, []);
   console.log('authors', authors);
-  // return (
-
-  // )
 }
 
 export default AuthorData;

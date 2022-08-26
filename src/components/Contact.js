@@ -19,10 +19,6 @@ const Contact = () => {
   const handleChange = e => {
     e.persist();
     setInputValues({ ...inputValues, [e.target.name]: e.target.value });
-    // setInputValues({
-    //   ...inputValues,
-    //   [e.target.name]: e.target.value
-    // })
   };
 
   // Handle form submission.
@@ -60,7 +56,6 @@ const Contact = () => {
               name='fullname'
               onChange={e => handleChange(e)}
               value={inputValues.fullname}
-              // onChange={handleChange}
               className={styles.formControl}
               id='fullname'
               placeholder='Enter your full name'

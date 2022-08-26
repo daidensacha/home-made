@@ -1,7 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { client } from './components/Client.js';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import Articles from './components/Articles';
@@ -15,17 +14,11 @@ import Error from './404';
 import jsonArticles from './data/db_articles';
 import jsonAuthors from './data/db_authors';
 
-
-
-
 // Import style sheets
 import 'normalize.css';
 import './App.scss';
 
 function App() {
-
-  // console.log("jsonArticles",jsonArticles);
-  // console.log("jsonAuthors",jsonAuthors);
 
   const location = useLocation();
 
@@ -35,18 +28,10 @@ function App() {
   useEffect(() => {
     setArticles(jsonArticles);
   }, []);
-  // console.log("atcicles", articles);
-  // Save articles data to
-  // const articleJson = JSON.stringify(articles);
-  // console.log("articleJson",articleJson);
-
 
   useEffect(() => {
     setAuthors(jsonAuthors);
   }, []);
-  // console.log('authors', authors);
-  // const authorJson = JSON.stringify(authors);
-  // console.log('authorJson', authorJson);
 
   return (
     <div className='App'>
@@ -71,11 +56,11 @@ function App() {
               element={<Articles articles={articles} authors={authors} />}
             />
             <Route
-              path='/articles/authorArticles/:author_id' // authorId
+              path='/articles/authorArticles/:author_id'
               element={<AuthorArticles articles={articles} authors={authors} />}
             />
             <Route
-              path='/articles/author/:author_id' // postAuthorId
+              path='/articles/author/:author_id'
               element={<Author articles={articles} authors={authors} />}
             />
             <Route path='/contact' element={<Contact articles={articles} />} />

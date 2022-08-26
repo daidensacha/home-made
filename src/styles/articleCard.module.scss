@@ -4,7 +4,6 @@
   display: flex;
   --padding: 1rem;
   flex: 1; // flex: 1; is equivalent to flex: 1 1 0; or flex-grow: 1; flex-shrink: 1; flex-basis: 0;
-  //
   min-width: 100%;
   max-width: 500px;
   justify-self: center;
@@ -56,11 +55,6 @@
       font-style: italic;
       margin-bottom: .25em;
     }
-    // .description {
-    //   color: $dark;
-    //   font-size: 1rem;
-    //   text-align: justify;
-    // }
     a.readMoreLink {
       text-decoration: none;
       display: inline-block;
@@ -72,8 +66,6 @@
   }
   .footer {
     margin-top: 1rem;
-    // padding: var(--padding);
-    // padding-top: 0;
     .btn {
       color: darken($blueDark, 0%);
       text-decoration: none;
@@ -114,9 +106,6 @@
       .heading {
         font-size: 1.5em;
       }
-      // .description {
-      //   font-size: 1rem;
-      // }
     }
     .footer {
       .btn {

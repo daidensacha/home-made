@@ -1,7 +1,6 @@
 import styles from '../styles/taggedArticlesCard.module.scss';
 import { Link } from 'react-router-dom';
 import TextTruncate from 'react-text-truncate';
-// import AnimatedPage from './AnimatedPage';
 
 const TaggedArticlesCard = ({
   id,
@@ -11,7 +10,6 @@ const TaggedArticlesCard = ({
   image_title,
   author,
   author_id,
-  created_at,
   published_at,
 }) => {
   function convertDate(dateStr) {
@@ -20,7 +18,6 @@ const TaggedArticlesCard = ({
   }
 
   return (
-    // {articles.map(article => console.log(article.fields.title))}
     title && body && id ? (
       <div className={styles.card}>
         <div className={styles.header}>
@@ -29,7 +26,6 @@ const TaggedArticlesCard = ({
         <div className={styles.body}>
           <h3 className={styles.heading}> {title} </h3>
           <p className={styles.date}>Author: <Link className={styles.link} to={`/articles/author/${author_id}`}>{author}</Link> Published: {convertDate(published_at)} </p>
-          {/* <p className={styles.description}> {description} </p> */}
           <TextTruncate
             line={3}
             element="p"
@@ -43,9 +39,6 @@ const TaggedArticlesCard = ({
           />
         </div>
         <div className={styles.footer}>
-          {/* <Link className={styles.btn} to={`/article/${slug}`}>
-            Read More
-          </Link> */}
         </div>
       </div>
     ) : (

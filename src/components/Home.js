@@ -4,7 +4,6 @@ import AnimatedPage from './AnimatedPage';
 import { Link } from 'react-router-dom';
 
 import styles from '../styles/home.module.scss';
-// Import the NavLink component.
 
 const Home = ({ articles }) => {
   return (

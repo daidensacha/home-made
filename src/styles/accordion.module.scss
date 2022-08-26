@@ -49,10 +49,6 @@
         }
       }
     }
-    // a:nth-child(2) {
-    //   display: inline-block;
-    //   margin-right: 1em;
-    // }
   }
   .accordionActive .cardBody {
     display: block;
@@ -125,7 +121,6 @@
       height: 1.8em;
     }
     .cardBody {
-      // height: auto;
       overflow-y: scroll;
     }
   }

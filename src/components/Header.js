@@ -26,7 +26,6 @@ const Header = ({ articles }) => {
       return article.title.toLowerCase().includes(query);
     }
   });
-  // console.log('filteredData', filteredData.length);
 
   // On click of link reset toggleShow to empty seach input and hide search results
   const clickHandler = e => {
@@ -35,8 +34,6 @@ const Header = ({ articles }) => {
     // Change toggleShow from true to false
     setToggleShow(!toggleShow);
   };
-
-
 
   return (
     <div className='header'>
