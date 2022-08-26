@@ -2,12 +2,12 @@ import CloseButton from './CloseButton';
 import styles from '../styles/modal.module.scss';
 
 const Modal = ({ modalOpen, action, inputValues }) => {
-  console.log(
-    'Modal',
-    inputValues.fullname,
-    inputValues.email,
-    inputValues.subject,
-  );
+  // console.log(
+  //   'Modal',
+  //   inputValues.fullname,
+  //   inputValues.email,
+  //   inputValues.subject,
+  // );
 
   return (
     <div className={`${styles.container} ${modalOpen ? styles.active : ''}`}>

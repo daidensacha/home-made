@@ -7,7 +7,7 @@ import styles from '../styles/author.module.scss';
 
 const Author = ({ authors }) => {
   const { author_id } = useParams();
-  console.log('author_id', typeof author_id);
+  // console.log('author_id', typeof author_id);
   const author = authors?.find(author => author.id === parseInt(author_id));
 
   return (

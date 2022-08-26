@@ -9,12 +9,10 @@ import styles from '../styles/articles.module.scss';
 
 const AuthorArticles = ({ articles, authors }) => {
   const { author_id } = useParams();
-  console.log('author_id', parseInt(author_id));
-  console.log("Articles",articles)
+  // console.log('author_id', parseInt(author_id));
 
 // Filter for author articles
   articles = articles?.filter(article => article.author_id === parseInt(author_id));
-  console.log("Articles",articles)
 
   return (
     <AnimatedPage>
