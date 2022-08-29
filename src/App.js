@@ -31,7 +31,6 @@ function App() {
   useEffect(() => {
     // API endpoint url defined in .env file
     const endpoint = `${REACT_APP_API_ENDPOINT}/posts`;
-
     const fetchArticles = async () => {
       try {
         const response = await fetch(endpoint);
